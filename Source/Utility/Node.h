@@ -629,7 +629,7 @@ template<typename OutputType>
 class NodeNonInterpolating : public NodeBase {
 public:	
 	// Useful type shorthands.  See <boost/circular_buffer.hpp> for details.
-    typedef typename boost::container::allocator_traits<std::allocator<OutputType> > Alloc;
+    typedef typename std::allocator<OutputType> Alloc;
     
 	typedef typename boost::circular_buffer<OutputType,Alloc>::value_type value_type;
 	typedef typename boost::circular_buffer<OutputType,Alloc>::pointer pointer;
