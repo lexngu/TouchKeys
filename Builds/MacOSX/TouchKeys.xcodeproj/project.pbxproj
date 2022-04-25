@@ -100,7 +100,6 @@
 		05A3090F3BD2DAA8D6DF24B6 /* KeyIdleDetector.cpp */ /* KeyIdleDetector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KeyIdleDetector.cpp; path = ../../Source/TouchKeys/KeyIdleDetector.cpp; sourceTree = SOURCE_ROOT; };
 		07F3126C9F1842B069672882 /* TouchkeyMultiFingerTriggerMappingFactory.h */ /* TouchkeyMultiFingerTriggerMappingFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyMultiFingerTriggerMappingFactory.h; path = ../../Source/Mappings/MultiFingerTrigger/TouchkeyMultiFingerTriggerMappingFactory.h; sourceTree = SOURCE_ROOT; };
 		091527B6BC312B2295FA565A /* MainApplicationController.h */ /* MainApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainApplicationController.h; path = ../../Source/MainApplicationController.h; sourceTree = SOURCE_ROOT; };
-		093F99B66AF55B30166389B2 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/alexander/cpp_libs/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
 		0955F3A0CD0B38AA81A04149 /* Trigger.h */ /* Trigger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Trigger.h; path = ../../Source/Utility/Trigger.h; sourceTree = SOURCE_ROOT; };
 		0A486C6A586B60525C9BAB59 /* MappingListItem.h */ /* MappingListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MappingListItem.h; path = ../../Source/GUI/MappingListItem.h; sourceTree = SOURCE_ROOT; };
 		0A5EA54B877D84C939B6F6D7 /* TouchkeyControlMappingShortEditor.h */ /* TouchkeyControlMappingShortEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyControlMappingShortEditor.h; path = ../../Source/Mappings/Control/TouchkeyControlMappingShortEditor.h; sourceTree = SOURCE_ROOT; };
@@ -116,15 +115,12 @@
 		1596880D3FEA7FDC94B7D71A /* tk-icon-128.png */ /* tk-icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tk-icon-128.png"; path = "../../Resources/tk-icon-128.png"; sourceTree = SOURCE_ROOT; };
 		178A386F6FE9CCEAD2ACEA3A /* OscMidiConverter.cpp */ /* OscMidiConverter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = OscMidiConverter.cpp; path = ../../Source/TouchKeys/OscMidiConverter.cpp; sourceTree = SOURCE_ROOT; };
 		183D81D9E023859A3E499243 /* PianoKey.cpp */ /* PianoKey.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PianoKey.cpp; path = ../../Source/TouchKeys/PianoKey.cpp; sourceTree = SOURCE_ROOT; };
-		18E6245661231FFD081BD9E2 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = /Users/alexander/cpp_libs/JUCE/modules/juce_gui_basics; sourceTree = "<absolute>"; };
-		19FA9674E61A73157DDD22BA /* juce_opengl */ /* juce_opengl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_opengl; path = /Users/alexander/cpp_libs/JUCE/modules/juce_opengl; sourceTree = "<absolute>"; };
-		1A1C98D91DC82337E70A174D /* juce_audio_devices */ /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_devices; path = /Users/alexander/cpp_libs/JUCE/modules/juce_audio_devices; sourceTree = "<absolute>"; };
 		1A9B74287470FD1944123E26 /* Accelerate.framework */ /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		1CB74D3985ED9A6D269B9A73 /* juce_opengl */ /* juce_opengl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_opengl; path = "~/cpp_libs/JUCE/modules/juce_opengl"; sourceTree = "<absolute>"; };
 		1DCDF6FC01C7DBDDA7D7AFEA /* TouchkeyPitchBendMappingShortEditor.h */ /* TouchkeyPitchBendMappingShortEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyPitchBendMappingShortEditor.h; path = ../../Source/Mappings/PitchBend/TouchkeyPitchBendMappingShortEditor.h; sourceTree = SOURCE_ROOT; };
 		1EDD89AA0A5497A9AC685E41 /* TimestampSynchronizer.h */ /* TimestampSynchronizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimestampSynchronizer.h; path = ../../Source/Utility/TimestampSynchronizer.h; sourceTree = SOURCE_ROOT; };
 		1FE6850B99F8EB37C6451B24 /* KeyboardTesterDisplay.h */ /* KeyboardTesterDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KeyboardTesterDisplay.h; path = ../../Source/Display/KeyboardTesterDisplay.h; sourceTree = SOURCE_ROOT; };
 		20BA5BC9BB93D1041D8F4C73 /* CoreMIDI.framework */ /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
-		23EFDA552FF1DF1B79579C50 /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = /Users/alexander/cpp_libs/JUCE/modules/juce_events; sourceTree = "<absolute>"; };
 		25875D01B837C34F01EF8C2F /* TouchkeyPitchBendMappingShortEditor.cpp */ /* TouchkeyPitchBendMappingShortEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyPitchBendMappingShortEditor.cpp; path = ../../Source/Mappings/PitchBend/TouchkeyPitchBendMappingShortEditor.cpp; sourceTree = SOURCE_ROOT; };
 		26646EAE80CBDF47DADEE278 /* MainApplicationController.cpp */ /* MainApplicationController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MainApplicationController.cpp; path = ../../Source/MainApplicationController.cpp; sourceTree = SOURCE_ROOT; };
 		283FF67DF916C041CE17E244 /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
@@ -143,6 +139,7 @@
 		4262B169F606570751DE5855 /* tk-icon-256.png */ /* tk-icon-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tk-icon-256.png"; path = "../../Resources/tk-icon-256.png"; sourceTree = SOURCE_ROOT; };
 		42DE2C4C5791303F70375058 /* MidiOutputController.h */ /* MidiOutputController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MidiOutputController.h; path = ../../Source/TouchKeys/MidiOutputController.h; sourceTree = SOURCE_ROOT; };
 		439AF7EB00EE96C9B8E9B480 /* KeyPositionGraphDisplay.h */ /* KeyPositionGraphDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KeyPositionGraphDisplay.h; path = ../../Source/Display/KeyPositionGraphDisplay.h; sourceTree = SOURCE_ROOT; };
+		47710DB2E22428579EFE1F8A /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = "~/cpp_libs/JUCE/modules/juce_graphics"; sourceTree = "<absolute>"; };
 		49F0D0437FF061BBBBE8CB88 /* TouchkeyEntropyGenerator.cpp */ /* TouchkeyEntropyGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyEntropyGenerator.cpp; path = ../../Source/TouchKeys/TouchkeyEntropyGenerator.cpp; sourceTree = SOURCE_ROOT; };
 		4AD0E0592C453AF63D48A792 /* TimerNode.h */ /* TimerNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimerNode.h; path = ../../Source/Utility/TimerNode.h; sourceTree = SOURCE_ROOT; };
 		4AF53AC364CD4D92FA9C66B1 /* RawSensorDisplay.h */ /* RawSensorDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RawSensorDisplay.h; path = ../../Source/Display/RawSensorDisplay.h; sourceTree = SOURCE_ROOT; };
@@ -154,7 +151,9 @@
 		4F8833A883C1631EA2A856A4 /* include_juce_graphics.mm */ /* include_juce_graphics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_graphics.mm; path = ../../JuceLibraryCode/include_juce_graphics.mm; sourceTree = SOURCE_ROOT; };
 		55010ADB4310C9FF2CD11D52 /* Icon.icns */ /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = file.icns; name = Icon.icns; path = Icon.icns; sourceTree = SOURCE_ROOT; };
 		55E99E81FC362EA304FEFC7D /* PianoKeyCalibrator.h */ /* PianoKeyCalibrator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PianoKeyCalibrator.h; path = ../../Source/TouchKeys/PianoKeyCalibrator.h; sourceTree = SOURCE_ROOT; };
+		56A776CFA235A8DCB8EEBE4D /* juce_audio_basics */ /* juce_audio_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_basics; path = "~/cpp_libs/JUCE/modules/juce_audio_basics"; sourceTree = "<absolute>"; };
 		56EF3900C63C00BED0E574D0 /* TouchkeyKeyDivisionMappingFactory.cpp */ /* TouchkeyKeyDivisionMappingFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyKeyDivisionMappingFactory.cpp; path = ../../Source/Mappings/KeyDivision/TouchkeyKeyDivisionMappingFactory.cpp; sourceTree = SOURCE_ROOT; };
+		57B000EF81975169D980F0C2 /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = "~/cpp_libs/JUCE/modules/juce_core"; sourceTree = "<absolute>"; };
 		592BCFFE2117C38F3D464CA1 /* TouchkeyOscEmulator.h */ /* TouchkeyOscEmulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyOscEmulator.h; path = ../../Source/TouchKeys/TouchkeyOscEmulator.h; sourceTree = SOURCE_ROOT; };
 		5A7A1022A19D6DD162029AA6 /* LogPlayback.cpp */ /* LogPlayback.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LogPlayback.cpp; path = ../../Source/TouchKeys/LogPlayback.cpp; sourceTree = SOURCE_ROOT; };
 		5BC3C1BA534425DE943BCA22 /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -200,6 +199,8 @@
 		8D0A4E0C8E8FFF9E73D4F796 /* TouchkeyOscEmulator.cpp */ /* TouchkeyOscEmulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyOscEmulator.cpp; path = ../../Source/TouchKeys/TouchkeyOscEmulator.cpp; sourceTree = SOURCE_ROOT; };
 		8E7E9C6A0AB2C632E8E7B3B5 /* TouchkeyReleaseAngleMappingExtendedEditor.h */ /* TouchkeyReleaseAngleMappingExtendedEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyReleaseAngleMappingExtendedEditor.h; path = ../../Source/Mappings/ReleaseAngle/TouchkeyReleaseAngleMappingExtendedEditor.h; sourceTree = SOURCE_ROOT; };
 		91AADDB641BD3F80E9011C65 /* TouchkeyReleaseAngleMappingFactory.cpp */ /* TouchkeyReleaseAngleMappingFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyReleaseAngleMappingFactory.cpp; path = ../../Source/Mappings/ReleaseAngle/TouchkeyReleaseAngleMappingFactory.cpp; sourceTree = SOURCE_ROOT; };
+		95849160CC271DEB083B187E /* juce_audio_devices */ /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_devices; path = "~/cpp_libs/JUCE/modules/juce_audio_devices"; sourceTree = "<absolute>"; };
+		95EF222287E962B27ECC6CA6 /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = "~/cpp_libs/JUCE/modules/juce_gui_extra"; sourceTree = "<absolute>"; };
 		9B9B99EFAE12DE02397A87B4 /* Osc.h */ /* Osc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Osc.h; path = ../../Source/TouchKeys/Osc.h; sourceTree = SOURCE_ROOT; };
 		9C0B692CB270EFA9DB7FA4D7 /* PianoKeyboard.cpp */ /* PianoKeyboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PianoKeyboard.cpp; path = ../../Source/TouchKeys/PianoKeyboard.cpp; sourceTree = SOURCE_ROOT; };
 		9D627B675B5F55FD5A203346 /* TimestampSynchronizer.cpp */ /* TimestampSynchronizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TimestampSynchronizer.cpp; path = ../../Source/Utility/TimestampSynchronizer.cpp; sourceTree = SOURCE_ROOT; };
@@ -208,13 +209,11 @@
 		9F843264E37B0F16987CDA48 /* Types.h */ /* Types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Types.h; path = ../../Source/Utility/Types.h; sourceTree = SOURCE_ROOT; };
 		A298E23EAF517A31513AA3A3 /* App */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B7D7B713F01F521411F2D3 /* Mapping.cpp */ /* Mapping.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Mapping.cpp; path = ../../Source/Mappings/Mapping.cpp; sourceTree = SOURCE_ROOT; };
-		AB7F8CF42B56FD3E145EA098 /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = /Users/alexander/cpp_libs/JUCE/modules/juce_core; sourceTree = "<absolute>"; };
 		AB905F0E2F21315696DB7242 /* TouchkeyKeyDivisionMappingShortEditor.cpp */ /* TouchkeyKeyDivisionMappingShortEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyKeyDivisionMappingShortEditor.cpp; path = ../../Source/Mappings/KeyDivision/TouchkeyKeyDivisionMappingShortEditor.cpp; sourceTree = SOURCE_ROOT; };
 		AF7CC57D767DFC1F4B121270 /* IIRFilter.h */ /* IIRFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IIRFilter.h; path = ../../Source/Utility/IIRFilter.h; sourceTree = SOURCE_ROOT; };
 		AF8EFA9540E8757E68922E40 /* MappingScheduler.cpp */ /* MappingScheduler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MappingScheduler.cpp; path = ../../Source/Mappings/MappingScheduler.cpp; sourceTree = SOURCE_ROOT; };
 		B0A4E57EEDD13E204E723A92 /* TouchkeyOnsetAngleMappingFactory.h */ /* TouchkeyOnsetAngleMappingFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyOnsetAngleMappingFactory.h; path = ../../Source/Mappings/OnsetAngle/TouchkeyOnsetAngleMappingFactory.h; sourceTree = SOURCE_ROOT; };
 		B24051ADEFBD03E1C7CB8DC3 /* GraphicsDisplayWindow.h */ /* GraphicsDisplayWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GraphicsDisplayWindow.h; path = ../../Source/GUI/GraphicsDisplayWindow.h; sourceTree = SOURCE_ROOT; };
-		B5F4856370727333DE3D6A22 /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = /Users/alexander/cpp_libs/JUCE/modules/juce_gui_extra; sourceTree = "<absolute>"; };
 		B6DCD7E8C9C5C9EA58C5EF9C /* MainWindow.h */ /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainWindow.h; path = ../../Source/GUI/MainWindow.h; sourceTree = SOURCE_ROOT; };
 		B7497C02BCD8C01280DA32B2 /* KeyPositionTracker.cpp */ /* KeyPositionTracker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KeyPositionTracker.cpp; path = ../../Source/TouchKeys/KeyPositionTracker.cpp; sourceTree = SOURCE_ROOT; };
 		BA2C6578AE3F6F2B82656B4F /* MappingListComponent.cpp */ /* MappingListComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MappingListComponent.cpp; path = ../../Source/GUI/MappingListComponent.cpp; sourceTree = SOURCE_ROOT; };
@@ -222,11 +221,9 @@
 		BC0A05397FE514F1AE6B3436 /* AppConfig.h */ /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = ../../JuceLibraryCode/AppConfig.h; sourceTree = SOURCE_ROOT; };
 		BD8254A682953545FA36F552 /* TouchkeyOnsetAngleMapping.h */ /* TouchkeyOnsetAngleMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyOnsetAngleMapping.h; path = ../../Source/Mappings/OnsetAngle/TouchkeyOnsetAngleMapping.h; sourceTree = SOURCE_ROOT; };
 		BDB6848D33CE535EBCA3B9AD /* MappingFactorySplitter.h */ /* MappingFactorySplitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MappingFactorySplitter.h; path = ../../Source/Mappings/MappingFactorySplitter.h; sourceTree = SOURCE_ROOT; };
-		BE1F3BCE0C5B069E8000BC76 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = /Users/alexander/cpp_libs/JUCE/modules/juce_audio_formats; sourceTree = "<absolute>"; };
 		BE91DB4CF2406F37AF7E7D67 /* ControlWindowMainComponent.h */ /* ControlWindowMainComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ControlWindowMainComponent.h; path = ../../Source/GUI/ControlWindowMainComponent.h; sourceTree = SOURCE_ROOT; };
 		BF01A2533D2222C856D3DB3A /* MRPMapping.h */ /* MRPMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRPMapping.h; path = ../../Source/Mappings/MRPMapping.h; sourceTree = SOURCE_ROOT; };
 		BFBC57AA124FBB8C1C51CB59 /* PianoTypes.h */ /* PianoTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PianoTypes.h; path = ../../Source/TouchKeys/PianoTypes.h; sourceTree = SOURCE_ROOT; };
-		C1BDAD715428DDCDA462178F /* juce_audio_basics */ /* juce_audio_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_basics; path = /Users/alexander/cpp_libs/JUCE/modules/juce_audio_basics; sourceTree = "<absolute>"; };
 		C266C85403BF3646B729144D /* OpenGLDisplayBase.h */ /* OpenGLDisplayBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpenGLDisplayBase.h; path = ../../Source/Display/OpenGLDisplayBase.h; sourceTree = SOURCE_ROOT; };
 		C2762F0E696E257A507595A5 /* MRPMapping.cpp */ /* MRPMapping.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MRPMapping.cpp; path = ../../Source/Mappings/MRPMapping.cpp; sourceTree = SOURCE_ROOT; };
 		C2D442FDEECC11C9BD433379 /* KeyboardDisplay.cpp */ /* KeyboardDisplay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = KeyboardDisplay.cpp; path = ../../Source/Display/KeyboardDisplay.cpp; sourceTree = SOURCE_ROOT; };
@@ -234,6 +231,7 @@
 		D246631FBF4BA7D650E8A804 /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
 		D30C028E8A09A5748C82A6D9 /* TouchkeyMultiFingerTriggerMappingShortEditor.cpp */ /* TouchkeyMultiFingerTriggerMappingShortEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyMultiFingerTriggerMappingShortEditor.cpp; path = ../../Source/Mappings/MultiFingerTrigger/TouchkeyMultiFingerTriggerMappingShortEditor.cpp; sourceTree = SOURCE_ROOT; };
 		D3F247C3C568453665FD300D /* LineSegment.h */ /* LineSegment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LineSegment.h; path = ../../Source/Utility/LineSegment.h; sourceTree = SOURCE_ROOT; };
+		D98AB103CB67A1E4E92F9364 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = "~/cpp_libs/JUCE/modules/juce_gui_basics"; sourceTree = "<absolute>"; };
 		D9FD13866909F3134B4AB740 /* Mapping.h */ /* Mapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Mapping.h; path = ../../Source/Mappings/Mapping.h; sourceTree = SOURCE_ROOT; };
 		DBDB2CBDB7DD3D7B9713D4C5 /* Scheduler.cpp */ /* Scheduler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Scheduler.cpp; path = ../../Source/Utility/Scheduler.cpp; sourceTree = SOURCE_ROOT; };
 		DD18A8B0C1A5F8BDA30BAA50 /* OscMidiConverter.h */ /* OscMidiConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OscMidiConverter.h; path = ../../Source/TouchKeys/OscMidiConverter.h; sourceTree = SOURCE_ROOT; };
@@ -242,8 +240,8 @@
 		DF870F58DC21D8A032AE4D03 /* Carbon.framework */ /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		E06F5B9974AB431783EDE6F6 /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		E38A23A31D7FB8E86851666B /* MidiInputController.cpp */ /* MidiInputController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MidiInputController.cpp; path = ../../Source/TouchKeys/MidiInputController.cpp; sourceTree = SOURCE_ROOT; };
+		E3E76DD9FFD1BB2BE7395DA1 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = "~/cpp_libs/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
 		E4529C806CCC5996B14B3791 /* PreferencesWindow.h */ /* PreferencesWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PreferencesWindow.h; path = ../../Source/GUI/PreferencesWindow.h; sourceTree = SOURCE_ROOT; };
-		E54B3913C690DD0001CDB72B /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = /Users/alexander/cpp_libs/JUCE/modules/juce_data_structures; sourceTree = "<absolute>"; };
 		E5F79D13171E0F28729529DD /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
 		E7B6750E6B2616D84773B7D0 /* MidiKeyboardSegment.h */ /* MidiKeyboardSegment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MidiKeyboardSegment.h; path = ../../Source/TouchKeys/MidiKeyboardSegment.h; sourceTree = SOURCE_ROOT; };
 		E8407FDF530FD9748B734365 /* TouchkeyReleaseAngleMappingExtendedEditor.cpp */ /* TouchkeyReleaseAngleMappingExtendedEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyReleaseAngleMappingExtendedEditor.cpp; path = ../../Source/Mappings/ReleaseAngle/TouchkeyReleaseAngleMappingExtendedEditor.cpp; sourceTree = SOURCE_ROOT; };
@@ -263,6 +261,8 @@
 		F70C14B43A5C65BB3E1C27A8 /* TouchkeyVibratoMappingFactory.h */ /* TouchkeyVibratoMappingFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyVibratoMappingFactory.h; path = ../../Source/Mappings/Vibrato/TouchkeyVibratoMappingFactory.h; sourceTree = SOURCE_ROOT; };
 		F89BC7CFD2C4BC07D31DFA04 /* TouchkeyPitchBendMapping.cpp */ /* TouchkeyPitchBendMapping.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TouchkeyPitchBendMapping.cpp; path = ../../Source/Mappings/PitchBend/TouchkeyPitchBendMapping.cpp; sourceTree = SOURCE_ROOT; };
 		F8A497B731D831D63F931631 /* TouchkeyMultiFingerTriggerMappingShortEditor.h */ /* TouchkeyMultiFingerTriggerMappingShortEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyMultiFingerTriggerMappingShortEditor.h; path = ../../Source/Mappings/MultiFingerTrigger/TouchkeyMultiFingerTriggerMappingShortEditor.h; sourceTree = SOURCE_ROOT; };
+		F93F3A23ED62DB1D7EF8B3CB /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = "~/cpp_libs/JUCE/modules/juce_events"; sourceTree = "<absolute>"; };
+		FB74FFFCD9F55DEAE75F97F0 /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = "~/cpp_libs/JUCE/modules/juce_data_structures"; sourceTree = "<absolute>"; };
 		FCAD01941521D09FBD22CC48 /* TouchkeyEntropyGenerator.h */ /* TouchkeyEntropyGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TouchkeyEntropyGenerator.h; path = ../../Source/TouchKeys/TouchkeyEntropyGenerator.h; sourceTree = SOURCE_ROOT; };
 		FD7BF71F32457EFD941519E0 /* MidiOutputController.cpp */ /* MidiOutputController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MidiOutputController.cpp; path = ../../Source/TouchKeys/MidiOutputController.cpp; sourceTree = SOURCE_ROOT; };
 		FE6FCFD3E4E2689302C29B50 /* PianoKeyboard.h */ /* PianoKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PianoKeyboard.h; path = ../../Source/TouchKeys/PianoKeyboard.h; sourceTree = SOURCE_ROOT; };
@@ -482,16 +482,16 @@
 		B6518018E1268AD0E306E052 /* JUCE Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C1BDAD715428DDCDA462178F,
-				1A1C98D91DC82337E70A174D,
-				BE1F3BCE0C5B069E8000BC76,
-				AB7F8CF42B56FD3E145EA098,
-				E54B3913C690DD0001CDB72B,
-				23EFDA552FF1DF1B79579C50,
-				093F99B66AF55B30166389B2,
-				18E6245661231FFD081BD9E2,
-				B5F4856370727333DE3D6A22,
-				19FA9674E61A73157DDD22BA,
+				56A776CFA235A8DCB8EEBE4D,
+				95849160CC271DEB083B187E,
+				E3E76DD9FFD1BB2BE7395DA1,
+				57B000EF81975169D980F0C2,
+				FB74FFFCD9F55DEAE75F97F0,
+				F93F3A23ED62DB1D7EF8B3CB,
+				47710DB2E22428579EFE1F8A,
+				D98AB103CB67A1E4E92F9364,
+				95EF222287E962B27ECC6CA6,
+				1CB74D3985ED9A6D269B9A73,
 			);
 			name = "JUCE Modules";
 			sourceTree = "<group>";
@@ -865,8 +865,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../JuceLibraryCode",
-					"/Users/alexander/cpp_libs/JUCE/modules",
+					"$(HOME)/cpp_libs/JUCE/modules",
 					"/usr/local/include",
+					"$(HOME)/cpp_libs/boost_1_79_0",
+					"$(HOME)/cpp_libs/liblo-0.31",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -874,7 +876,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/alexander/cpp_libs/JUCE/modules /usr/local/include";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/cpp_libs/JUCE/modules /usr/local/include $(HOME)/cpp_libs/boost_1_79_0 $(HOME)/cpp_libs/liblo-0.31";
 				OTHER_LDFLAGS = "/usr/local/lib/liblo.a";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.qmul.eecs.touchkeys;
 				PRODUCT_NAME = "TouchKeys";
@@ -963,15 +965,17 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../JuceLibraryCode",
-					"/Users/alexander/cpp_libs/JUCE/modules",
+					"$(HOME)/cpp_libs/JUCE/modules",
 					"/usr/local/include",
+					"$(HOME)/cpp_libs/boost_1_79_0",
+					"$(HOME)/cpp_libs/liblo-0.31",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/alexander/cpp_libs/JUCE/modules /usr/local/include";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/cpp_libs/JUCE/modules /usr/local/include $(HOME)/cpp_libs/boost_1_79_0 $(HOME)/cpp_libs/liblo-0.31";
 				OTHER_LDFLAGS = "/usr/local/lib/liblo.a";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.qmul.eecs.touchkeys;
 				PRODUCT_NAME = "TouchKeys";
