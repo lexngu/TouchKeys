@@ -35,7 +35,6 @@
 #include <cmath>
 #include <stdint.h>
 #include <boost/circular_buffer.hpp>
-#include <boost/container/allocator_traits.hpp>
 #include <boost/lambda/lambda.hpp>
 #include "Types.h"
 #include "Trigger.h"
@@ -57,14 +56,14 @@ template<typename OutputType> class Node;
 // Custom iterator type to move through the Node buffer
 template <class OutputType, class Traits, class NonConstTraits>
 struct NodeIterator :
-	public std::iterator<
+	public boost::iterator<
 	std::random_access_iterator_tag,
 	typename Traits::value_type,
 	typename Traits::difference_type,
 	typename Traits::pointer,
 	typename Traits::reference>
 {
-    typedef std::iterator<
+    typedef boost::iterator<
 		std::random_access_iterator_tag,
 		typename Traits::value_type,
 		typename Traits::difference_type,
@@ -218,14 +217,14 @@ struct NodeIterator :
  */
 
 template <typename T>
-struct NodeReverseIterator : public std::reverse_iterator<T> {
+struct NodeReverseIterator : public boost::reverse_iterator<T> {
 	NodeReverseIterator() {}
-	explicit NodeReverseIterator(T baseIt) : std::reverse_iterator<T>(baseIt) {}
+	explicit NodeReverseIterator(T baseIt) : boost::reverse_iterator<T>(baseIt) {}
 	
-	typedef typename std::reverse_iterator<T>::base_type::size_type size_type;
+	typedef typename boost::reverse_iterator<T>::base_type::size_type size_type;
 
-	size_type index() const { return std::prev(this->base_reference()).index(); }
-	timestamp_type timestamp() const { return std::prev(this->base_reference()).timestamp(); }
+	size_type index() const { return boost::prior(this->base_reference()).index(); }
+	timestamp_type timestamp() const { return boost::prior(this->base_reference()).timestamp(); }
 };
 
 /*
@@ -237,7 +236,7 @@ struct NodeReverseIterator : public std::reverse_iterator<T> {
 
 template<typename OutputType, typename Traits>
 struct NodeInterpolatedIterator :
-	public std::iterator<
+	public boost::iterator<
 	std::random_access_iterator_tag,
 	typename Traits::value_type,
 	typename Traits::difference_type,
@@ -246,7 +245,7 @@ struct NodeInterpolatedIterator :
 {
 	typedef NodeInterpolatedIterator<OutputType,Traits> self_type;
 	
-    typedef std::iterator<
+    typedef boost::iterator<
 		std::random_access_iterator_tag,
 		typename Traits::value_type,
 		typename Traits::difference_type,
