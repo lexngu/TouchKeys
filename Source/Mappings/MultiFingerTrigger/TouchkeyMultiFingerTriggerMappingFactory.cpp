@@ -136,7 +136,7 @@ XmlElement* TouchkeyMultiFingerTriggerMappingFactory::getPreset() {
     properties.setValue("triggerOnNoteVel", triggerOnNoteVel_);
     properties.setValue("triggerOffNoteVel", triggerOffNoteVel_);
     
-    XmlElement* preset = properties.createXml("MappingFactory");
+    XmlElement* preset = properties.createXml("MappingFactory").get();
     preset->setAttribute("type", "MultiFingerTrigger");
     
     return preset;

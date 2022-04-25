@@ -216,7 +216,7 @@ XmlElement* TouchkeyReleaseAngleMappingFactory::getPreset() {
 
     // TODO: set arrays of notes and velocities
     
-    XmlElement* preset = properties.createXml("MappingFactory");
+    XmlElement* preset = properties.createXml("MappingFactory").get();
     preset->setAttribute("type", "ReleaseAngle");
     
     return preset;

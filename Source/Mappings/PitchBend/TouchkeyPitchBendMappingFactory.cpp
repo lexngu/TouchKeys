@@ -199,7 +199,7 @@ XmlElement* TouchkeyPitchBendMappingFactory::getPreset() {
     properties.setValue("bendIgnoresTwoFingers", bendIgnoresTwoFingers_);
     properties.setValue("bendIgnoresThreeFingers", bendIgnoresThreeFingers_);
     
-    XmlElement* preset = properties.createXml("MappingFactory");
+    XmlElement* preset = properties.createXml("MappingFactory").get();
     preset->setAttribute("type", "PitchBend");
     
     return preset;

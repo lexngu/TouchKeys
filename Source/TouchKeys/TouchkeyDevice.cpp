@@ -1118,7 +1118,7 @@ bool TouchkeyDevice::calibrationLoadFromFile(std::string const& filename) {
 	// Open the file and read the new values
 	try {
         XmlDocument doc(File(filename.c_str()));
-		XmlElement *baseElement = doc.getDocumentElement();
+		XmlElement *baseElement = doc.getDocumentElement().get();
         XmlElement *deviceCalibrationElement, *calibratorElement;
 		
 		if(baseElement == 0) {

@@ -241,7 +241,7 @@ public:
         PropertySet properties;
         storeCommonProperties(properties);
         
-        XmlElement* presetElement = properties.createXml("MappingFactory");
+        XmlElement* presetElement = properties.createXml("MappingFactory").get();
         presetElement->setAttribute("type", "Unknown");
         return presetElement;
     }

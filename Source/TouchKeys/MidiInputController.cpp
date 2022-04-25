@@ -141,7 +141,7 @@ bool MidiInputController::enablePort(int portNumber, bool isPrimary) {
     
     // Enable the port if it hasn't been already
     if(activePorts_.count(portNumber) == 0) {
-        MidiInput *device = MidiInput::openDevice(portNumber, this);
+        MidiInput *device = MidiInput::openDevice(portNumber, this).get();
             
         if(device == 0) {
 #ifdef DEBUG_MIDI_INPUT_CONTROLLER

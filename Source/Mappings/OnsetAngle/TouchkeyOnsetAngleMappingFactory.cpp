@@ -42,7 +42,7 @@ XmlElement* TouchkeyOnsetAngleMappingFactory::getPreset() {
     
     // No properties for now
     
-    XmlElement* preset = properties.createXml("MappingFactory");
+    XmlElement* preset = properties.createXml("MappingFactory").get();
     preset->setAttribute("type", "OnsetAngle");
     
     return preset;
