@@ -144,8 +144,8 @@ void TouchkeyKeyDivisionMappingFactory::setTuningPreset(int preset) {
 
 #ifndef TOUCHKEYS_NO_GUI
 // ***** GUI Support *****
-std::unique_ptr<MappingEditorComponent> TouchkeyKeyDivisionMappingFactory::createBasicEditor() {
-    return std::make_unique<TouchkeyKeyDivisionMappingShortEditor>(*this);
+MappingEditorComponent* TouchkeyKeyDivisionMappingFactory::createBasicEditor() {
+    return new TouchkeyKeyDivisionMappingShortEditor(*this);
 }
 #endif
 

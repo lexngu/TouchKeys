@@ -92,9 +92,9 @@ public:
 #ifndef TOUCHKEYS_NO_GUI
     // ***** GUI Support *****
     bool hasBasicEditor() { return true; }
-    std::unique_ptr<MappingEditorComponent> createBasicEditor();
+    MappingEditorComponent* createBasicEditor();
     bool hasExtendedEditor() { return true; }
-    std::unique_ptr<MappingEditorComponent> createExtendedEditor();
+    MappingEditorComponent* createExtendedEditor();
 #endif
     
     // ****** OSC Control Support ******

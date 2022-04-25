@@ -32,29 +32,30 @@
 PreferencesComponent::PreferencesComponent ()
     : controller_(0)
 {
-    addAndMakeVisible ((startupPresetComboBox = std::make_unique<ComboBox>("Startup preset combo box")).get());
+    addAndMakeVisible (startupPresetComboBox = new ComboBox ("Startup preset combo box"));
     startupPresetComboBox->setEditableText (false);
     startupPresetComboBox->setJustificationType (Justification::centredLeft);
     startupPresetComboBox->setTextWhenNothingSelected (String());
     startupPresetComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     startupPresetComboBox->addListener (this);
 
-    addAndMakeVisible ((label4 = std::make_unique<Label>("new label", "Load preset on startup:")).get());
+    addAndMakeVisible (label4 = new Label ("new label",
+                                           "Load preset on startup:"));
     label4->setFont (Font (15.00f, Font::plain));
     label4->setJustificationType (Justification::centredLeft);
     label4->setEditable (false, false, false);
     label4->setColour (TextEditor::textColourId, Colours::black);
     label4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible ((startTouchKeysButton = std::make_unique<ToggleButton>("auto start TouchKeys button")).get());
+    addAndMakeVisible (startTouchKeysButton = new ToggleButton ("auto start TouchKeys button"));
     startTouchKeysButton->setButtonText ("Start TouchKeys on startup");
     startTouchKeysButton->addListener (this);
 
-    addAndMakeVisible ((autodetectButton = std::make_unique<ToggleButton>("Autodetect button")).get());
+    addAndMakeVisible (autodetectButton = new ToggleButton ("Autodetect button"));
     autodetectButton->setButtonText ("Autodetect TouchKeys octave on each start");
     autodetectButton->addListener (this);
 
-    addAndMakeVisible ((defaultsButton = std::make_unique<TextButton>("new button")).get());
+    addAndMakeVisible (defaultsButton = new TextButton ("new button"));
     defaultsButton->setButtonText ("Reset to Defaults...");
     defaultsButton->addListener (this);
 
@@ -122,7 +123,7 @@ void PreferencesComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
         return;
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == startupPresetComboBox.get())
+    if (comboBoxThatHasChanged == startupPresetComboBox)
     {
         //[UserComboBoxCode_startupPresetComboBox] -- add your combo box handling code here..
         int selection = startupPresetComboBox->getSelectedId();
@@ -159,19 +160,19 @@ void PreferencesComponent::buttonClicked (Button* buttonThatWasClicked)
         return;
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == startTouchKeysButton.get())
+    if (buttonThatWasClicked == startTouchKeysButton)
     {
         //[UserButtonCode_startTouchKeysButton] -- add your button handler code here..
         controller_->setPrefsAutoStartTouchKeys(startTouchKeysButton->getToggleState());
         //[/UserButtonCode_startTouchKeysButton]
     }
-    else if (buttonThatWasClicked == autodetectButton.get())
+    else if (buttonThatWasClicked == autodetectButton)
     {
         //[UserButtonCode_autodetectButton] -- add your button handler code here..
         controller_->setPrefsAutodetectOctave(autodetectButton->getToggleState());
         //[/UserButtonCode_autodetectButton]
     }
-    else if (buttonThatWasClicked == defaultsButton.get())
+    else if (buttonThatWasClicked == defaultsButton)
     {
         //[UserButtonCode_defaultsButton] -- add your button handler code here..
         controller_->resetPreferences();

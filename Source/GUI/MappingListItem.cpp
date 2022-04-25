@@ -33,32 +33,34 @@
 MappingListItem::MappingListItem (MappingListComponent& listComponent)
     : factory_(0), listComponent_(listComponent)
 {
-    addAndMakeVisible ((bypassToggleButton = std::make_unique<ToggleButton>("Bypass toggle button")).get());
+    addAndMakeVisible (bypassToggleButton = new ToggleButton ("Bypass toggle button"));
     bypassToggleButton->setButtonText ("Bypass");
     bypassToggleButton->addListener (this);
 
-    addAndMakeVisible ((showDetailsButton = std::make_unique<TextButton>("Show details button")).get());
+    addAndMakeVisible (showDetailsButton = new TextButton ("Show details button"));
     showDetailsButton->setButtonText ("Details...");
     showDetailsButton->addListener (this);
 
-    addAndMakeVisible ((mappingTypeLabel = std::make_unique<Label>("mapping type label", "MappingType")).get());
+    addAndMakeVisible (mappingTypeLabel = new Label ("mapping type label",
+                                                     "MappingType"));
     mappingTypeLabel->setFont (Font (18.00f, Font::plain));
     mappingTypeLabel->setJustificationType (Justification::centred);
     mappingTypeLabel->setEditable (false, false, false);
     mappingTypeLabel->setColour (TextEditor::textColourId, Colours::black);
     mappingTypeLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible ((mappingShortEditorComponent = std::make_unique<MappingEditorComponent>()).get());
+    addAndMakeVisible (mappingShortEditorComponent = new MappingEditorComponent());
     mappingShortEditorComponent->setName ("mapping short editor component");
 
-    addAndMakeVisible ((noSettingsLabel = std::make_unique<Label>("no settings label", "(no settings)")).get());
+    addAndMakeVisible (noSettingsLabel = new Label ("no settings label",
+                                                    "(no settings)"));
     noSettingsLabel->setFont (Font (15.00f, Font::plain));
     noSettingsLabel->setJustificationType (Justification::centred);
     noSettingsLabel->setEditable (false, false, false);
     noSettingsLabel->setColour (TextEditor::textColourId, Colours::black);
     noSettingsLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible ((deleteButton = std::make_unique<TextButton>("delete button")).get());
+    addAndMakeVisible (deleteButton = new TextButton ("delete button"));
     deleteButton->setButtonText ("Delete...");
     deleteButton->addListener (this);
 
@@ -146,14 +148,14 @@ void MappingListItem::buttonClicked (Button* buttonThatWasClicked)
         return;
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == bypassToggleButton.get())
+    if (buttonThatWasClicked == bypassToggleButton)
     {
         //[UserButtonCode_bypassToggleButton] -- add your button handler code here..
         bool bypass = bypassToggleButton->getToggleState();
         factory_->setBypassed(bypass);
         //[/UserButtonCode_bypassToggleButton]
     }
-    else if (buttonThatWasClicked == showDetailsButton.get())
+    else if (buttonThatWasClicked == showDetailsButton)
     {
         //[UserButtonCode_showDetailsButton] -- add your button handler code here..
         // Create an extended editor window
@@ -166,7 +168,7 @@ void MappingListItem::buttonClicked (Button* buttonThatWasClicked)
             listComponent_.openExtendedEditorWindow(factory_);
         //[/UserButtonCode_showDetailsButton]
     }
-    else if (buttonThatWasClicked == deleteButton.get())
+    else if (buttonThatWasClicked == deleteButton)
     {
         //[UserButtonCode_deleteButton] -- add your button handler code here..
         // Display an alert to confirm the user wants to delete this mapping
@@ -212,7 +214,7 @@ void MappingListItem::setMappingFactory(MappingFactory *factory)
         // as before
         const juce::Rectangle<int>& bounds = mappingShortEditorComponent->getBounds();
         mappingShortEditorComponent = factory_->createBasicEditor();
-        addAndMakeVisible(mappingShortEditorComponent.get());
+        addAndMakeVisible(mappingShortEditorComponent);
         mappingShortEditorComponent->setBounds(bounds);
         noSettingsLabel->setVisible(false);
     }

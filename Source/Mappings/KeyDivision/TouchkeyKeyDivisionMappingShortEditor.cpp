@@ -31,35 +31,37 @@
 TouchkeyKeyDivisionMappingShortEditor::TouchkeyKeyDivisionMappingShortEditor (TouchkeyKeyDivisionMappingFactory& factory)
     : factory_(factory)
 {
-    addAndMakeVisible ((tuningComboBox = std::make_unique<ComboBox>("tuning combo box")).get());
+    addAndMakeVisible (tuningComboBox = new ComboBox ("tuning combo box"));
     tuningComboBox->setEditableText (false);
     tuningComboBox->setJustificationType (Justification::centredLeft);
     tuningComboBox->setTextWhenNothingSelected (String());
     tuningComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     tuningComboBox->addListener (this);
 
-    addAndMakeVisible ((tuningLabel = std::make_unique<Label>("tuning label", TRANS("Tuning:"))).get());
+    addAndMakeVisible (tuningLabel = new Label ("tuning label",
+                                                TRANS("Tuning:")));
     tuningLabel->setFont (Font (15.00f, Font::plain));
     tuningLabel->setJustificationType (Justification::centredLeft);
     tuningLabel->setEditable (false, false, false);
     tuningLabel->setColour (TextEditor::textColourId, Colours::black);
     tuningLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible ((controlLabel = std::make_unique<Label>("control label", TRANS("Control:"))).get());
+    addAndMakeVisible (controlLabel = new Label ("control label",
+                                                 TRANS("Control:")));
     controlLabel->setFont (Font (15.00f, Font::plain));
     controlLabel->setJustificationType (Justification::centredLeft);
     controlLabel->setEditable (false, false, false);
     controlLabel->setColour (TextEditor::textColourId, Colours::black);
     controlLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible ((controlComboBox = std::make_unique<ComboBox>("control combo box")).get());
+    addAndMakeVisible (controlComboBox = new ComboBox ("control combo box"));
     controlComboBox->setEditableText (false);
     controlComboBox->setJustificationType (Justification::centredLeft);
     controlComboBox->setTextWhenNothingSelected (String());
     controlComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     controlComboBox->addListener (this);
 
-    addAndMakeVisible ((retriggerButton = std::make_unique<ToggleButton>("retrigger button")).get());
+    addAndMakeVisible (retriggerButton = new ToggleButton ("retrigger button"));
     retriggerButton->setButtonText (TRANS("Retriggerable"));
     retriggerButton->addListener (this);
 
@@ -130,14 +132,14 @@ void TouchkeyKeyDivisionMappingShortEditor::comboBoxChanged (ComboBox* comboBoxT
     //[UsercomboBoxChanged_Pre]
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == tuningComboBox.get())
+    if (comboBoxThatHasChanged == tuningComboBox)
     {
         //[UserComboBoxCode_tuningComboBox] -- add your combo box handling code here..
         // Offset the value by 1 since preset numbering starts from 0 but combo box IDs start from 1...
         factory_.setTuningPreset(tuningComboBox->getSelectedId() - 1);
         //[/UserComboBoxCode_tuningComboBox]
     }
-    else if (comboBoxThatHasChanged == controlComboBox.get())
+    else if (comboBoxThatHasChanged == controlComboBox)
     {
         //[UserComboBoxCode_controlComboBox] -- add your combo box handling code here..
         factory_.setDetectionParameter(controlComboBox->getSelectedId());
@@ -153,7 +155,7 @@ void TouchkeyKeyDivisionMappingShortEditor::buttonClicked (Button* buttonThatWas
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == retriggerButton.get())
+    if (buttonThatWasClicked == retriggerButton)
     {
         //[UserButtonCode_retriggerButton] -- add your button handler code here..
         factory_.setRetriggerable(retriggerButton->getToggleState());

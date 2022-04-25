@@ -27,7 +27,7 @@ public:
     MappingExtendedEditorWindow(MappingListComponent& listComponent,
                                 MidiKeyboardSegment& segment, MappingFactory& factory)
     : DocumentWindow("", Colours::lightgrey, DocumentWindow::minimiseButton | DocumentWindow::closeButton),
-      listComponent_(listComponent), segment_(segment), factory_(factory), editor_()
+      listComponent_(listComponent), segment_(segment), factory_(factory), editor_(0)
     {
         setUsingNativeTitleBar(true);
         setResizable(false, false);
@@ -36,7 +36,7 @@ public:
             editor_ = factory_.createExtendedEditor();
         
             // Set properties
-            setContentOwned(editor_.get(), true);
+            setContentOwned(editor_, true);
             
             // Start interface in sync
             editor_->synchronize();
@@ -86,7 +86,7 @@ private:
     MappingListComponent& listComponent_;
     MidiKeyboardSegment& segment_;
     MappingFactory& factory_;
-    std::unique_ptr<MappingEditorComponent> editor_;
+    MappingEditorComponent *editor_;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MappingExtendedEditorWindow)
 };

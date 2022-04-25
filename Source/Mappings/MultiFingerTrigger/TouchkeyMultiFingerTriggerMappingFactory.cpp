@@ -104,8 +104,8 @@ void TouchkeyMultiFingerTriggerMappingFactory::setTriggerOffNoteVelocity(int vel
 
 #ifndef TOUCHKEYS_NO_GUI
 // ***** GUI Support *****
-std::unique_ptr<MappingEditorComponent> TouchkeyMultiFingerTriggerMappingFactory::createBasicEditor() {
-    return std::make_unique<TouchkeyMultiFingerTriggerMappingShortEditor>(*this);
+MappingEditorComponent* TouchkeyMultiFingerTriggerMappingFactory::createBasicEditor() {
+    return new TouchkeyMultiFingerTriggerMappingShortEditor(*this);
 }
 #endif
 

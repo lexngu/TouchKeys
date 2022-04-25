@@ -123,8 +123,8 @@ void TouchkeyPitchBendMappingFactory::setBendIgnoresMultipleFingers(bool ignores
 
 #ifndef TOUCHKEYS_NO_GUI
 // ***** GUI Support *****
-std::unique_ptr<MappingEditorComponent> TouchkeyPitchBendMappingFactory::createBasicEditor() {
-    return std::make_unique<TouchkeyPitchBendMappingShortEditor>(*this);
+MappingEditorComponent* TouchkeyPitchBendMappingFactory::createBasicEditor() {
+    return new TouchkeyPitchBendMappingShortEditor(*this);
 }
 #endif
 
