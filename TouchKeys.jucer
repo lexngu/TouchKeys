@@ -280,14 +280,14 @@
   </MODULES>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX" externalLibraries="" extraFrameworks=""
-               extraLinkerFlags="/usr/local/lib/liblo.a" smallIcon="mbX6Jp"
+               extraLinkerFlags="/usr/local/lib/liblo.7.dylib&#10;" smallIcon="mbX6Jp"
                bigIcon="b3DhPc" xcodeValidArchs="arm64,x86_64">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="10.11 SDK" isDebug="1"
-                       optimisation="1" targetName="TouchKeys" headerPath="/usr/local/include&#10;~/cpp_libs/boost_1_79_0&#10;~/cpp_libs/liblo-0.31"
+                       optimisation="1" targetName="TouchKeys" headerPath="/usr/local/include&#10;~/cpp_libs/boost_1_55_0&#10;~/cpp_libs/liblo-0.31"
                        macOSDeploymentTarget="10.11"/>
         <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="10.11 SDK"
-                       isDebug="0" optimisation="2" targetName="TouchKeys" headerPath="/usr/local/include&#10;~/cpp_libs/boost_1_79_0&#10;~/cpp_libs/liblo-0.31"
+                       isDebug="0" optimisation="2" targetName="TouchKeys" headerPath="/usr/local/include&#10;~/cpp_libs/boost_1_55_0&#10;~/cpp_libs/liblo-0.31"
                        macOSDeploymentTarget="10.11"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
