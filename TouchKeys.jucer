@@ -2,7 +2,8 @@
 
 <JUCERPROJECT id="iju11L" name="TouchKeys" projectType="guiapp" version="0.1.0"
               bundleIdentifier="uk.ac.qmul.eecs.touchkeys" companyName="Queen Mary, University of London"
-              includeBinaryInAppConfig="1" displaySplashScreen="1" jucerFormatVersion="1">
+              includeBinaryInAppConfig="1" displaySplashScreen="1" jucerFormatVersion="1"
+              defines="JUCE_MODAL_LOOPS_PERMITTED=1">
   <MAINGROUP id="GloKS2" name="TouchKeys">
     <FILE id="mbX6Jp" name="tk-icon-128.png" compile="0" resource="1" file="Resources/tk-icon-128.png"/>
     <FILE id="b3DhPc" name="tk-icon-256.png" compile="0" resource="1" file="Resources/tk-icon-256.png"/>
