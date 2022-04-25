@@ -31,38 +31,35 @@
 TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEditor (TouchkeyReleaseAngleMappingFactory& factory)
     : factory_(factory)
 {
-    addAndMakeVisible (titleLabel = new Label ("title label",
-                                               TRANS("Release Angle Mapping (Zone N, #M)")));
+    addAndMakeVisible ((titleLabel = std::make_unique<Label>("title label", TRANS("Release Angle Mapping (Zone N, #M)"))).get());
     titleLabel->setFont (Font (15.00f, Font::bold));
     titleLabel->setJustificationType (Justification::centredLeft);
     titleLabel->setEditable (false, false, false);
     titleLabel->setColour (TextEditor::textColourId, Colours::black);
     titleLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (presetLabel = new Label ("preset label",
-                                                TRANS("Preset:")));
+    addAndMakeVisible ((presetLabel = std::make_unique<Label>("preset label", TRANS("Preset:"))).get());
     presetLabel->setFont (Font (15.00f, Font::plain));
     presetLabel->setJustificationType (Justification::centredLeft);
     presetLabel->setEditable (false, false, false);
     presetLabel->setColour (TextEditor::textColourId, Colours::black);
     presetLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (presetComboBox = new ComboBox ("parameter combo box"));
+    addAndMakeVisible ((presetComboBox = std::make_unique<ComboBox>("parameter combo box")).get());
     presetComboBox->setEditableText (false);
     presetComboBox->setJustificationType (Justification::centredLeft);
     presetComboBox->setTextWhenNothingSelected (String());
     presetComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     presetComboBox->addListener (this);
 
-    addAndMakeVisible (presetLabel2 = new Label ("preset label",
-                                                 TRANS("Window Length:")));
+    addAndMakeVisible ((presetLabel2 = std::make_unique<Label>("preset label", TRANS("Window Length:"))).get());
     presetLabel2->setFont (Font (15.00f, Font::plain));
     presetLabel2->setJustificationType (Justification::centredLeft);
     presetLabel2->setEditable (false, false, false);
     presetLabel2->setColour (TextEditor::textColourId, Colours::black);
     presetLabel2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (windowLengthEditor = new TextEditor ("range low text editor"));
+    addAndMakeVisible ((windowLengthEditor = std::make_unique<TextEditor>("range low text editor")).get());
     windowLengthEditor->setMultiLine (false);
     windowLengthEditor->setReturnKeyStartsNewLine (false);
     windowLengthEditor->setReadOnly (false);
@@ -71,23 +68,21 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     windowLengthEditor->setPopupMenuEnabled (true);
     windowLengthEditor->setText (String());
 
-    addAndMakeVisible (presetLabel3 = new Label ("preset label",
-                                                 TRANS("ms. before release")));
+    addAndMakeVisible ((presetLabel3 = std::make_unique<Label>("preset label", TRANS("ms. before release"))).get());
     presetLabel3->setFont (Font (15.00f, Font::plain));
     presetLabel3->setJustificationType (Justification::centredLeft);
     presetLabel3->setEditable (false, false, false);
     presetLabel3->setColour (TextEditor::textColourId, Colours::black);
     presetLabel3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (presetLabel4 = new Label ("preset label",
-                                                 TRANS("Release Moving Up")));
+    addAndMakeVisible ((presetLabel4 = std::make_unique<Label>("preset label", TRANS("Release Moving Up"))).get());
     presetLabel4->setFont (Font (15.00f, Font::bold));
     presetLabel4->setJustificationType (Justification::centredLeft);
     presetLabel4->setEditable (false, false, false);
     presetLabel4->setColour (TextEditor::textColourId, Colours::black);
     presetLabel4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (upMinSpeedEditor = new TextEditor ("up release speed editor"));
+    addAndMakeVisible ((upMinSpeedEditor = std::make_unique<TextEditor>("up release speed editor")).get());
     upMinSpeedEditor->setMultiLine (false);
     upMinSpeedEditor->setReturnKeyStartsNewLine (false);
     upMinSpeedEditor->setReadOnly (false);
@@ -96,15 +91,14 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upMinSpeedEditor->setPopupMenuEnabled (true);
     upMinSpeedEditor->setText (String());
 
-    addAndMakeVisible (presetLabel5 = new Label ("preset label",
-                                                 TRANS("Min. release speed:")));
+    addAndMakeVisible ((presetLabel5 = std::make_unique<Label>("preset label", TRANS("Min. release speed:"))).get());
     presetLabel5->setFont (Font (15.00f, Font::plain));
     presetLabel5->setJustificationType (Justification::centredRight);
     presetLabel5->setEditable (false, false, false);
     presetLabel5->setColour (TextEditor::textColourId, Colours::black);
     presetLabel5->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (upNote1Editor = new TextEditor ("up note 1 editor"));
+    addAndMakeVisible ((upNote1Editor = std::make_unique<TextEditor>("up note 1 editor")).get());
     upNote1Editor->setMultiLine (false);
     upNote1Editor->setReturnKeyStartsNewLine (false);
     upNote1Editor->setReadOnly (false);
@@ -113,15 +107,14 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upNote1Editor->setPopupMenuEnabled (true);
     upNote1Editor->setText (String());
 
-    addAndMakeVisible (presetLabel6 = new Label ("preset label",
-                                                 TRANS("Send notes:")));
+    addAndMakeVisible ((presetLabel6 = std::make_unique<Label>("preset label", TRANS("Send notes:"))).get());
     presetLabel6->setFont (Font (15.00f, Font::plain));
     presetLabel6->setJustificationType (Justification::centredRight);
     presetLabel6->setEditable (false, false, false);
     presetLabel6->setColour (TextEditor::textColourId, Colours::black);
     presetLabel6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (upNote2Editor = new TextEditor ("up note 2 editor"));
+    addAndMakeVisible ((upNote2Editor = std::make_unique<TextEditor>("up note 2 editor")).get());
     upNote2Editor->setMultiLine (false);
     upNote2Editor->setReturnKeyStartsNewLine (false);
     upNote2Editor->setReadOnly (false);
@@ -130,7 +123,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upNote2Editor->setPopupMenuEnabled (true);
     upNote2Editor->setText (String());
 
-    addAndMakeVisible (upNote3Editor = new TextEditor ("up note 3 editor"));
+    addAndMakeVisible ((upNote3Editor = std::make_unique<TextEditor>("up note 3 editor")).get());
     upNote3Editor->setMultiLine (false);
     upNote3Editor->setReturnKeyStartsNewLine (false);
     upNote3Editor->setReadOnly (false);
@@ -139,15 +132,14 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upNote3Editor->setPopupMenuEnabled (true);
     upNote3Editor->setText (String());
 
-    addAndMakeVisible (presetLabel7 = new Label ("preset label",
-                                                 TRANS("With velocities:")));
+    addAndMakeVisible ((presetLabel7 = std::make_unique<Label>("preset label", TRANS("With velocities:"))).get());
     presetLabel7->setFont (Font (15.00f, Font::plain));
     presetLabel7->setJustificationType (Justification::centredRight);
     presetLabel7->setEditable (false, false, false);
     presetLabel7->setColour (TextEditor::textColourId, Colours::black);
     presetLabel7->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (upVelocity1Editor = new TextEditor ("up velocity 1 editor"));
+    addAndMakeVisible ((upVelocity1Editor = std::make_unique<TextEditor>("up velocity 1 editor")).get());
     upVelocity1Editor->setMultiLine (false);
     upVelocity1Editor->setReturnKeyStartsNewLine (false);
     upVelocity1Editor->setReadOnly (false);
@@ -156,7 +148,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upVelocity1Editor->setPopupMenuEnabled (true);
     upVelocity1Editor->setText (String());
 
-    addAndMakeVisible (upVelocity2Editor = new TextEditor ("up velocity 2 editor"));
+    addAndMakeVisible ((upVelocity2Editor = std::make_unique<TextEditor>("up velocity 2 editor")).get());
     upVelocity2Editor->setMultiLine (false);
     upVelocity2Editor->setReturnKeyStartsNewLine (false);
     upVelocity2Editor->setReadOnly (false);
@@ -165,7 +157,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upVelocity2Editor->setPopupMenuEnabled (true);
     upVelocity2Editor->setText (String());
 
-    addAndMakeVisible (upVelocity3Editor = new TextEditor ("up velocity 3 editor"));
+    addAndMakeVisible ((upVelocity3Editor = std::make_unique<TextEditor>("up velocity 3 editor")).get());
     upVelocity3Editor->setMultiLine (false);
     upVelocity3Editor->setReturnKeyStartsNewLine (false);
     upVelocity3Editor->setReadOnly (false);
@@ -174,15 +166,14 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upVelocity3Editor->setPopupMenuEnabled (true);
     upVelocity3Editor->setText (String());
 
-    addAndMakeVisible (presetLabel8 = new Label ("preset label",
-                                                 TRANS("Release Moving Down")));
+    addAndMakeVisible ((presetLabel8 = std::make_unique<Label>("preset label", TRANS("Release Moving Down"))).get());
     presetLabel8->setFont (Font (15.00f, Font::bold));
     presetLabel8->setJustificationType (Justification::centredLeft);
     presetLabel8->setEditable (false, false, false);
     presetLabel8->setColour (TextEditor::textColourId, Colours::black);
     presetLabel8->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (downMinSpeedEditor = new TextEditor ("down release speed editor"));
+    addAndMakeVisible ((downMinSpeedEditor = std::make_unique<TextEditor>("down release speed editor")).get());
     downMinSpeedEditor->setMultiLine (false);
     downMinSpeedEditor->setReturnKeyStartsNewLine (false);
     downMinSpeedEditor->setReadOnly (false);
@@ -191,15 +182,14 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downMinSpeedEditor->setPopupMenuEnabled (true);
     downMinSpeedEditor->setText (String());
 
-    addAndMakeVisible (presetLabel9 = new Label ("preset label",
-                                                 TRANS("Min. release speed:")));
+    addAndMakeVisible ((presetLabel9 = std::make_unique<Label>("preset label", TRANS("Min. release speed:"))).get());
     presetLabel9->setFont (Font (15.00f, Font::plain));
     presetLabel9->setJustificationType (Justification::centredRight);
     presetLabel9->setEditable (false, false, false);
     presetLabel9->setColour (TextEditor::textColourId, Colours::black);
     presetLabel9->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (downNote1Editor = new TextEditor ("down note 1 editor"));
+    addAndMakeVisible ((downNote1Editor = std::make_unique<TextEditor>("down note 1 editor")).get());
     downNote1Editor->setMultiLine (false);
     downNote1Editor->setReturnKeyStartsNewLine (false);
     downNote1Editor->setReadOnly (false);
@@ -208,15 +198,14 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downNote1Editor->setPopupMenuEnabled (true);
     downNote1Editor->setText (String());
 
-    addAndMakeVisible (presetLabel10 = new Label ("preset label",
-                                                  TRANS("Send notes:")));
+    addAndMakeVisible ((presetLabel10 = std::make_unique<Label>("preset label", TRANS("Send notes:"))).get());
     presetLabel10->setFont (Font (15.00f, Font::plain));
     presetLabel10->setJustificationType (Justification::centredRight);
     presetLabel10->setEditable (false, false, false);
     presetLabel10->setColour (TextEditor::textColourId, Colours::black);
     presetLabel10->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (downNote2Editor = new TextEditor ("down note 2 editor"));
+    addAndMakeVisible ((downNote2Editor = std::make_unique<TextEditor>("down note 2 editor")).get());
     downNote2Editor->setMultiLine (false);
     downNote2Editor->setReturnKeyStartsNewLine (false);
     downNote2Editor->setReadOnly (false);
@@ -225,7 +214,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downNote2Editor->setPopupMenuEnabled (true);
     downNote2Editor->setText (String());
 
-    addAndMakeVisible (downNote3Editor = new TextEditor ("down note 3 editor"));
+    addAndMakeVisible ((downNote3Editor = std::make_unique<TextEditor>("down note 3 editor")).get());
     downNote3Editor->setMultiLine (false);
     downNote3Editor->setReturnKeyStartsNewLine (false);
     downNote3Editor->setReadOnly (false);
@@ -234,15 +223,14 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downNote3Editor->setPopupMenuEnabled (true);
     downNote3Editor->setText (String());
 
-    addAndMakeVisible (presetLabel11 = new Label ("preset label",
-                                                  TRANS("With velocities:")));
+    addAndMakeVisible ((presetLabel11 = std::make_unique<Label>("preset label", TRANS("With velocities:"))).get());
     presetLabel11->setFont (Font (15.00f, Font::plain));
     presetLabel11->setJustificationType (Justification::centredRight);
     presetLabel11->setEditable (false, false, false);
     presetLabel11->setColour (TextEditor::textColourId, Colours::black);
     presetLabel11->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (downVelocity1Editor = new TextEditor ("down velocity 1 editor"));
+    addAndMakeVisible ((downVelocity1Editor = std::make_unique<TextEditor>("down velocity 1 editor")).get());
     downVelocity1Editor->setMultiLine (false);
     downVelocity1Editor->setReturnKeyStartsNewLine (false);
     downVelocity1Editor->setReadOnly (false);
@@ -251,7 +239,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downVelocity1Editor->setPopupMenuEnabled (true);
     downVelocity1Editor->setText (String());
 
-    addAndMakeVisible (downVelocity2Editor = new TextEditor ("down velocity 2 editor"));
+    addAndMakeVisible ((downVelocity2Editor = std::make_unique<TextEditor>("down velocity 2 editor")).get());
     downVelocity2Editor->setMultiLine (false);
     downVelocity2Editor->setReturnKeyStartsNewLine (false);
     downVelocity2Editor->setReadOnly (false);
@@ -260,7 +248,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downVelocity2Editor->setPopupMenuEnabled (true);
     downVelocity2Editor->setText (String());
 
-    addAndMakeVisible (downVelocity3Editor = new TextEditor ("down velocity 3 editor"));
+    addAndMakeVisible ((downVelocity3Editor = std::make_unique<TextEditor>("down velocity 3 editor")).get());
     downVelocity3Editor->setMultiLine (false);
     downVelocity3Editor->setReturnKeyStartsNewLine (false);
     downVelocity3Editor->setReadOnly (false);
@@ -269,11 +257,11 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downVelocity3Editor->setPopupMenuEnabled (true);
     downVelocity3Editor->setText (String());
 
-    addAndMakeVisible (upEnableButton = new ToggleButton ("up enable button"));
+    addAndMakeVisible ((upEnableButton = std::make_unique<ToggleButton>("up enable button")).get());
     upEnableButton->setButtonText (TRANS("Enable"));
     upEnableButton->addListener (this);
 
-    addAndMakeVisible (downEnableButton = new ToggleButton ("down enable button"));
+    addAndMakeVisible ((downEnableButton = std::make_unique<ToggleButton>("down enable button")).get());
     downEnableButton->setButtonText (TRANS("Enable"));
     downEnableButton->addListener (this);
 
@@ -401,7 +389,7 @@ void TouchkeyReleaseAngleMappingExtendedEditor::comboBoxChanged (ComboBox* combo
     //[UsercomboBoxChanged_Pre]
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == presetComboBox)
+    if (comboBoxThatHasChanged == presetComboBox.get())
     {
         //[UserComboBoxCode_presetComboBox] -- add your combo box handling code here..
         int index = presetComboBox->getSelectedItemIndex();
@@ -418,13 +406,13 @@ void TouchkeyReleaseAngleMappingExtendedEditor::buttonClicked (Button* buttonTha
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == upEnableButton)
+    if (buttonThatWasClicked == upEnableButton.get())
     {
         //[UserButtonCode_upEnableButton] -- add your button handler code here..
         factory_.setUpMessagesEnabled(upEnableButton->getToggleState());
         //[/UserButtonCode_upEnableButton]
     }
-    else if (buttonThatWasClicked == downEnableButton)
+    else if (buttonThatWasClicked == downEnableButton.get())
     {
         //[UserButtonCode_downEnableButton] -- add your button handler code here..
         factory_.setDownMessagesEnabled(downEnableButton->getToggleState());
@@ -441,15 +429,15 @@ void TouchkeyReleaseAngleMappingExtendedEditor::buttonClicked (Button* buttonTha
 
 void TouchkeyReleaseAngleMappingExtendedEditor::textEditorReturnKeyPressed(TextEditor &editor)
 {
-    if(&editor == windowLengthEditor) {
+    if(&editor == windowLengthEditor.get()) {
         float windowLength = atof(windowLengthEditor->getText().toUTF8());
         factory_.setWindowSize(windowLength);
     }
-    else if(&editor == upMinSpeedEditor) {
+    else if(&editor == upMinSpeedEditor.get()) {
         float speed = atof(upMinSpeedEditor->getText().toUTF8());
         factory_.setUpMinimumAngle(speed);
     }
-    else if(&editor == downMinSpeedEditor) {
+    else if(&editor == downMinSpeedEditor.get()) {
         float speed = atof(downMinSpeedEditor->getText().toUTF8());
         factory_.setDownMinimumAngle(speed);
     }
@@ -457,29 +445,29 @@ void TouchkeyReleaseAngleMappingExtendedEditor::textEditorReturnKeyPressed(TextE
         // All the other editors are int values
         int value = atoi(editor.getText().toUTF8());
 
-        if(&editor == upNote1Editor)
+        if(&editor == upNote1Editor.get())
             factory_.setUpNote(0, value);
-        else if(&editor == upNote2Editor)
+        else if(&editor == upNote2Editor.get())
             factory_.setUpNote(1, value);
-        else if(&editor == upNote3Editor)
+        else if(&editor == upNote3Editor.get())
             factory_.setUpNote(2, value);
-        else if(&editor == upVelocity1Editor)
+        else if(&editor == upVelocity1Editor.get())
             factory_.setUpVelocity(0, value);
-        else if(&editor == upVelocity2Editor)
+        else if(&editor == upVelocity2Editor.get())
             factory_.setUpVelocity(1, value);
-        else if(&editor == upVelocity3Editor)
+        else if(&editor == upVelocity3Editor.get())
             factory_.setUpVelocity(2, value);
-        else if(&editor == downNote1Editor)
+        else if(&editor == downNote1Editor.get())
             factory_.setDownNote(0, value);
-        else if(&editor == downNote2Editor)
+        else if(&editor == downNote2Editor.get())
             factory_.setDownNote(1, value);
-        else if(&editor == downNote3Editor)
+        else if(&editor == downNote3Editor.get())
             factory_.setDownNote(2, value);
-        else if(&editor == downVelocity1Editor)
+        else if(&editor == downVelocity1Editor.get())
             factory_.setDownVelocity(0, value);
-        else if(&editor == downVelocity2Editor)
+        else if(&editor == downVelocity2Editor.get())
             factory_.setDownVelocity(1, value);
-        else if(&editor == downVelocity3Editor)
+        else if(&editor == downVelocity3Editor.get())
             factory_.setDownVelocity(2, value);
     }
 }
@@ -504,7 +492,7 @@ void TouchkeyReleaseAngleMappingExtendedEditor::synchronize()
         float value = factory_.getWindowSize();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.0f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.0f", value);
 #else
         snprintf(st, 16, "%.0f", value);
 #endif
@@ -515,7 +503,7 @@ void TouchkeyReleaseAngleMappingExtendedEditor::synchronize()
         float value = factory_.getUpMinimumAngle();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
 #else
         snprintf(st, 16, "%.2f", value);
 #endif
@@ -527,7 +515,7 @@ void TouchkeyReleaseAngleMappingExtendedEditor::synchronize()
         float value = factory_.getDownMinimumAngle();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
 #else
         snprintf(st, 16, "%.2f", value);
 #endif

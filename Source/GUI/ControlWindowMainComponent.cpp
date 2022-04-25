@@ -33,74 +33,66 @@
 ControlWindowMainComponent::ControlWindowMainComponent ()
     : controller_(0)
 {
-    addAndMakeVisible (midiInputGroupComponent = new GroupComponent ("MIDI input group",
-                                                                     "MIDI Input"));
+    addAndMakeVisible ((midiInputGroupComponent = std::make_unique<GroupComponent>("MIDI input group", "MIDI Input")).get());
 
-    addAndMakeVisible (midiInputDeviceComboBox = new ComboBox ("MIDI input combo box"));
+    addAndMakeVisible ((midiInputDeviceComboBox = std::make_unique<ComboBox>("MIDI input combo box")).get());
     midiInputDeviceComboBox->setEditableText (false);
     midiInputDeviceComboBox->setJustificationType (Justification::centredLeft);
     midiInputDeviceComboBox->setTextWhenNothingSelected (String());
     midiInputDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiInputDeviceComboBox->addListener (this);
 
-    addAndMakeVisible (label = new Label ("new label",
-                                          "Keyboard:"));
+    addAndMakeVisible ((label = std::make_unique<Label>("new label", "Keyboard:")).get());
     label->setFont (Font (15.00f, Font::plain));
     label->setJustificationType (Justification::centredLeft);
     label->setEditable (false, false, false);
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (groupComponent = new GroupComponent ("new group",
-                                                            "TouchKeys"));
+    addAndMakeVisible ((groupComponent = std::make_unique<GroupComponent>("new group", "TouchKeys")).get());
 
-    addAndMakeVisible (label2 = new Label ("new label",
-                                           "Device:\n"));
+    addAndMakeVisible ((label2 = std::make_unique<Label>("new label", "Device:\n")).get());
     label2->setFont (Font (15.00f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (touchkeyDeviceComboBox = new ComboBox ("TouchKeys combo box"));
+    addAndMakeVisible ((touchkeyDeviceComboBox = std::make_unique<ComboBox>("TouchKeys combo box")).get());
     touchkeyDeviceComboBox->setEditableText (false);
     touchkeyDeviceComboBox->setJustificationType (Justification::centredLeft);
     touchkeyDeviceComboBox->setTextWhenNothingSelected (String());
     touchkeyDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     touchkeyDeviceComboBox->addListener (this);
 
-    addAndMakeVisible (label3 = new Label ("new label",
-                                           "Status:\n"));
+    addAndMakeVisible ((label3 = std::make_unique<Label>("new label", "Status:\n")).get());
     label3->setFont (Font (15.00f, Font::plain));
     label3->setJustificationType (Justification::centredLeft);
     label3->setEditable (false, false, false);
     label3->setColour (TextEditor::textColourId, Colours::black);
     label3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (touchkeyStartButton = new TextButton ("TouchKeys start button"));
+    addAndMakeVisible ((touchkeyStartButton = std::make_unique<TextButton>("TouchKeys start button")).get());
     touchkeyStartButton->setButtonText ("Start");
     touchkeyStartButton->addListener (this);
 
-    addAndMakeVisible (touchkeyStatusLabel = new Label ("TouchKeys status label",
-                                                        "not running"));
+    addAndMakeVisible ((touchkeyStatusLabel = std::make_unique<Label>("TouchKeys status label", "not running")).get());
     touchkeyStatusLabel->setFont (Font (15.00f, Font::plain));
     touchkeyStatusLabel->setJustificationType (Justification::centredLeft);
     touchkeyStatusLabel->setEditable (false, false, false);
     touchkeyStatusLabel->setColour (TextEditor::textColourId, Colours::black);
     touchkeyStatusLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (oscGroupComponent = new GroupComponent ("OSC group",
-                                                               "OSC Output"));
+    addAndMakeVisible ((oscGroupComponent = std::make_unique<GroupComponent>("OSC group", "OSC Output")).get());
 
-    addAndMakeVisible (label7 = new Label ("new label",
-                                           "Host:"));
+    addAndMakeVisible ((label7 = std::make_unique<Label>("new label", "Host:")).get());
     label7->setFont (Font (15.00f, Font::plain));
     label7->setJustificationType (Justification::centredLeft);
     label7->setEditable (false, false, false);
     label7->setColour (TextEditor::textColourId, Colours::black);
     label7->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (oscHostTextEditor = new TextEditor ("new text editor"));
+    addAndMakeVisible ((oscHostTextEditor = std::make_unique<TextEditor>("new text editor")).get());
     oscHostTextEditor->setMultiLine (false);
     oscHostTextEditor->setReturnKeyStartsNewLine (false);
     oscHostTextEditor->setReadOnly (false);
@@ -109,15 +101,14 @@ ControlWindowMainComponent::ControlWindowMainComponent ()
     oscHostTextEditor->setPopupMenuEnabled (true);
     oscHostTextEditor->setText ("127.0.0.1");
 
-    addAndMakeVisible (label8 = new Label ("new label",
-                                           "Port:"));
+    addAndMakeVisible ((label8 = std::make_unique<Label>("new label", "Port:")).get());
     label8->setFont (Font (15.00f, Font::plain));
     label8->setJustificationType (Justification::centredLeft);
     label8->setEditable (false, false, false);
     label8->setColour (TextEditor::textColourId, Colours::black);
     label8->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (oscPortTextEditor = new TextEditor ("new text editor"));
+    addAndMakeVisible ((oscPortTextEditor = std::make_unique<TextEditor>("new text editor")).get());
     oscPortTextEditor->setMultiLine (false);
     oscPortTextEditor->setReturnKeyStartsNewLine (false);
     oscPortTextEditor->setReadOnly (false);
@@ -126,45 +117,42 @@ ControlWindowMainComponent::ControlWindowMainComponent ()
     oscPortTextEditor->setPopupMenuEnabled (true);
     oscPortTextEditor->setText ("8000");
 
-    addAndMakeVisible (oscEnableButton = new ToggleButton ("OSC enable button"));
+    addAndMakeVisible ((oscEnableButton = std::make_unique<ToggleButton>("OSC enable button")).get());
     oscEnableButton->setButtonText ("Enable OSC output");
     oscEnableButton->addListener (this);
 
-    addAndMakeVisible (oscEnableRawButton = new ToggleButton ("OSC enable raw button"));
+    addAndMakeVisible ((oscEnableRawButton = std::make_unique<ToggleButton>("OSC enable raw button")).get());
     oscEnableRawButton->setButtonText ("Send raw frames");
     oscEnableRawButton->addListener (this);
 
-    addAndMakeVisible (label4 = new Label ("new label",
-                                           "Lowest Octave:"));
+    addAndMakeVisible ((label4 = std::make_unique<Label>("new label", "Lowest Octave:")).get());
     label4->setFont (Font (15.00f, Font::plain));
     label4->setJustificationType (Justification::centredLeft);
     label4->setEditable (false, false, false);
     label4->setColour (TextEditor::textColourId, Colours::black);
     label4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (touchkeyOctaveComboBox = new ComboBox ("TouchKeys octave box"));
+    addAndMakeVisible ((touchkeyOctaveComboBox = std::make_unique<ComboBox>("TouchKeys octave box")).get());
     touchkeyOctaveComboBox->setEditableText (false);
     touchkeyOctaveComboBox->setJustificationType (Justification::centredLeft);
     touchkeyOctaveComboBox->setTextWhenNothingSelected (String());
     touchkeyOctaveComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     touchkeyOctaveComboBox->addListener (this);
 
-    addAndMakeVisible (oscInputGroupComponent = new GroupComponent ("MIDI input group",
-                                                                    "OSC Input"));
+    addAndMakeVisible ((oscInputGroupComponent = std::make_unique<GroupComponent>("MIDI input group", "OSC Input")).get());
 
-    addAndMakeVisible (oscInputEnableButton = new ToggleButton ("OSC input enable button"));
+    addAndMakeVisible ((oscInputEnableButton = std::make_unique<ToggleButton>("OSC input enable button")).get());
     oscInputEnableButton->setButtonText ("Enable OSC input");
     oscInputEnableButton->addListener (this);
 
-    addAndMakeVisible (label6 = new Label ("new label",
-                                           "Port:"));
+    addAndMakeVisible ((label6 = std::make_unique<Label>("new label", "Port:")).get());
     label6->setFont (Font (15.00f, Font::plain));
     label6->setJustificationType (Justification::centredLeft);
     label6->setEditable (false, false, false);
     label6->setColour (TextEditor::textColourId, Colours::black);
     label6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (oscInputPortTextEditor = new TextEditor ("new text editor"));
+    addAndMakeVisible ((oscInputPortTextEditor = std::make_unique<TextEditor>("new text editor")).get());
     oscInputPortTextEditor->setMultiLine (false);
     oscInputPortTextEditor->setReturnKeyStartsNewLine (false);
     oscInputPortTextEditor->setReadOnly (false);
@@ -173,31 +161,30 @@ ControlWindowMainComponent::ControlWindowMainComponent ()
     oscInputPortTextEditor->setPopupMenuEnabled (true);
     oscInputPortTextEditor->setText ("8001");
 
-    addAndMakeVisible (keyboardZoneTabbedComponent = new TabbedComponent (TabbedButtonBar::TabsAtTop));
+    addAndMakeVisible ((keyboardZoneTabbedComponent = std::make_unique<TabbedComponent>(TabbedButtonBar::TabsAtTop)).get());
     keyboardZoneTabbedComponent->setTabBarDepth (30);
     keyboardZoneTabbedComponent->setCurrentTabIndex (-1);
 
-    addAndMakeVisible (addZoneButton = new TextButton ("add zone button"));
+    addAndMakeVisible ((addZoneButton = std::make_unique<TextButton>("add zone button")).get());
     addZoneButton->setButtonText ("Add");
     addZoneButton->addListener (this);
 
-    addAndMakeVisible (removeZoneButton = new TextButton ("remove zone button"));
+    addAndMakeVisible ((removeZoneButton = std::make_unique<TextButton>("remove zone button")).get());
     removeZoneButton->setButtonText ("Del");
     removeZoneButton->addListener (this);
 
-    addAndMakeVisible (touchkeyAutodetectButton = new TextButton ("TouchKeys autodetect button"));
+    addAndMakeVisible ((touchkeyAutodetectButton = std::make_unique<TextButton>("TouchKeys autodetect button")).get());
     touchkeyAutodetectButton->setButtonText ("Detect");
     touchkeyAutodetectButton->addListener (this);
 
-    addAndMakeVisible (midiInputAuxDeviceComboBox = new ComboBox ("MIDI input aux combo box"));
+    addAndMakeVisible ((midiInputAuxDeviceComboBox = std::make_unique<ComboBox>("MIDI input aux combo box")).get());
     midiInputAuxDeviceComboBox->setEditableText (false);
     midiInputAuxDeviceComboBox->setJustificationType (Justification::centredLeft);
     midiInputAuxDeviceComboBox->setTextWhenNothingSelected (String());
     midiInputAuxDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiInputAuxDeviceComboBox->addListener (this);
 
-    addAndMakeVisible (label5 = new Label ("new label",
-                                           "Aux:"));
+    addAndMakeVisible ((label5 = std::make_unique<Label>("new label", "Aux:")).get());
     label5->setFont (Font (15.00f, Font::plain));
     label5->setJustificationType (Justification::centredRight);
     label5->setEditable (false, false, false);
@@ -324,7 +311,7 @@ void ControlWindowMainComponent::comboBoxChanged (ComboBox* comboBoxThatHasChang
         return;
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == midiInputDeviceComboBox)
+    if (comboBoxThatHasChanged == midiInputDeviceComboBox.get())
     {
         //[UserComboBoxCode_midiInputDeviceComboBox] -- add your combo box handling code here..
 
@@ -348,13 +335,13 @@ void ControlWindowMainComponent::comboBoxChanged (ComboBox* comboBoxThatHasChang
         }
         //[/UserComboBoxCode_midiInputDeviceComboBox]
     }
-    else if (comboBoxThatHasChanged == touchkeyDeviceComboBox)
+    else if (comboBoxThatHasChanged == touchkeyDeviceComboBox.get())
     {
         //[UserComboBoxCode_touchkeyDeviceComboBox] -- add your combo box handling code here..
         // Nothing to do here right away -- wait until start button is pressed
         //[/UserComboBoxCode_touchkeyDeviceComboBox]
     }
-    else if (comboBoxThatHasChanged == touchkeyOctaveComboBox)
+    else if (comboBoxThatHasChanged == touchkeyOctaveComboBox.get())
     {
         //[UserComboBoxCode_touchkeyOctaveComboBox] -- add your combo box handling code here..
         int octave = touchkeyOctaveComboBox->getSelectedId() - kTouchkeysComponentComboBoxOffset;
@@ -364,7 +351,7 @@ void ControlWindowMainComponent::comboBoxChanged (ComboBox* comboBoxThatHasChang
             controller_->touchkeyDeviceSetLowestMidiNote((octave + 1)*12);
         //[/UserComboBoxCode_touchkeyOctaveComboBox]
     }
-    else if (comboBoxThatHasChanged == midiInputAuxDeviceComboBox)
+    else if (comboBoxThatHasChanged == midiInputAuxDeviceComboBox.get())
     {
         //[UserComboBoxCode_midiInputAuxDeviceComboBox] -- add your combo box handling code here..
         
@@ -399,7 +386,7 @@ void ControlWindowMainComponent::buttonClicked (Button* buttonThatWasClicked)
         return;
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == touchkeyStartButton)
+    if (buttonThatWasClicked == touchkeyStartButton.get())
     {
         //[UserButtonCode_touchkeyStartButton] -- add your button handler code here..
 #ifdef ENABLE_TOUCHKEYS_SENSOR_TEST
@@ -424,31 +411,31 @@ void ControlWindowMainComponent::buttonClicked (Button* buttonThatWasClicked)
         }
         //[/UserButtonCode_touchkeyStartButton]
     }
-    else if (buttonThatWasClicked == oscEnableButton)
+    else if (buttonThatWasClicked == oscEnableButton.get())
     {
         //[UserButtonCode_oscEnableButton] -- add your button handler code here..
         controller_->oscTransmitSetEnabled(oscEnableButton->getToggleState());
         //[/UserButtonCode_oscEnableButton]
     }
-    else if (buttonThatWasClicked == oscEnableRawButton)
+    else if (buttonThatWasClicked == oscEnableRawButton.get())
     {
         //[UserButtonCode_oscEnableRawButton] -- add your button handler code here..
         controller_->oscTransmitSetRawDataEnabled(oscEnableRawButton->getToggleState());
         //[/UserButtonCode_oscEnableRawButton]
     }
-    else if (buttonThatWasClicked == oscInputEnableButton)
+    else if (buttonThatWasClicked == oscInputEnableButton.get())
     {
         //[UserButtonCode_oscInputEnableButton] -- add your button handler code here..
         controller_->oscReceiveSetEnabled(oscInputEnableButton->getToggleState());
         //[/UserButtonCode_oscInputEnableButton]
     }
-    else if (buttonThatWasClicked == addZoneButton)
+    else if (buttonThatWasClicked == addZoneButton.get())
     {
         //[UserButtonCode_addZoneButton] -- add your button handler code here..
         controller_->midiSegmentAdd();
         //[/UserButtonCode_addZoneButton]
     }
-    else if (buttonThatWasClicked == removeZoneButton)
+    else if (buttonThatWasClicked == removeZoneButton.get())
     {
         //[UserButtonCode_removeZoneButton] -- add your button handler code here..
         int tabIndex = keyboardZoneTabbedComponent->getCurrentTabIndex();
@@ -458,7 +445,7 @@ void ControlWindowMainComponent::buttonClicked (Button* buttonThatWasClicked)
         }
         //[/UserButtonCode_removeZoneButton]
     }
-    else if (buttonThatWasClicked == touchkeyAutodetectButton)
+    else if (buttonThatWasClicked == touchkeyAutodetectButton.get())
     {
         //[UserButtonCode_touchkeyAutodetectButton] -- add your button handler code here..
         if(controller_->touchkeyDeviceIsAutodetecting())
@@ -480,9 +467,9 @@ void ControlWindowMainComponent::textEditorReturnKeyPressed(TextEditor &editor)
 {
     if(controller_ == 0)
         return;
-    if(&editor == oscHostTextEditor || &editor == oscPortTextEditor)
+    if(&editor == oscHostTextEditor.get() || &editor == oscPortTextEditor.get())
         updateOscHostPort();
-    else if(&editor == oscInputPortTextEditor) {
+    else if(&editor == oscInputPortTextEditor.get()) {
         int port = atoi(oscInputPortTextEditor->getText().toUTF8());
         controller_->oscReceiveSetPort(port);
     }
@@ -778,7 +765,7 @@ void ControlWindowMainComponent::updateKeyboardSegments()
 
             char name[16];
 #ifdef _MSC_VER
-			_snprintf_s(name, 16, _TRUNCATE, "Zone %d", segment->outputPort());
+            _snprintf_s(name, 16, _TRUNCATE, "Zone %d", segment->outputPort());
 #else
             snprintf(name, 16, "Zone %d", segment->outputPort());
 #endif

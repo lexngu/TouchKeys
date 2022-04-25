@@ -31,7 +31,7 @@
 TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (TouchkeyControlMappingFactory& factory)
     : factory_(factory), typeWasAbsolute_(false)
 {
-    addAndMakeVisible (inputRangeLowEditor = new TextEditor ("range low text editor"));
+    addAndMakeVisible ((inputRangeLowEditor = std::make_unique<TextEditor>("range low text editor")).get());
     inputRangeLowEditor->setMultiLine (false);
     inputRangeLowEditor->setReturnKeyStartsNewLine (false);
     inputRangeLowEditor->setReadOnly (false);
@@ -40,60 +40,56 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     inputRangeLowEditor->setPopupMenuEnabled (true);
     inputRangeLowEditor->setText (String());
 
-    addAndMakeVisible (rangeLabel = new Label ("range label",
-                                               "Input Range:"));
+    addAndMakeVisible ((rangeLabel = std::make_unique<Label>("range label", "Input Range:")).get());
     rangeLabel->setFont (Font (15.00f, Font::plain));
     rangeLabel->setJustificationType (Justification::centredLeft);
     rangeLabel->setEditable (false, false, false);
     rangeLabel->setColour (TextEditor::textColourId, Colours::black);
     rangeLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (controlLabel = new Label ("control label",
-                                                 "To Control:"));
+    addAndMakeVisible ((controlLabel = std::make_unique<Label>("control label", "To Control:")).get());
     controlLabel->setFont (Font (15.00f, Font::plain));
     controlLabel->setJustificationType (Justification::centredRight);
     controlLabel->setEditable (false, false, false);
     controlLabel->setColour (TextEditor::textColourId, Colours::black);
     controlLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (controlComboBox = new ComboBox ("control combo box"));
+    addAndMakeVisible ((controlComboBox = std::make_unique<ComboBox>("control combo box")).get());
     controlComboBox->setEditableText (false);
     controlComboBox->setJustificationType (Justification::centredLeft);
     controlComboBox->setTextWhenNothingSelected (String());
     controlComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     controlComboBox->addListener (this);
 
-    addAndMakeVisible (controlLabel2 = new Label ("control label",
-                                                  "Parameter:"));
+    addAndMakeVisible ((controlLabel2 = std::make_unique<Label>("control label", "Parameter:")).get());
     controlLabel2->setFont (Font (15.00f, Font::plain));
     controlLabel2->setJustificationType (Justification::centredLeft);
     controlLabel2->setEditable (false, false, false);
     controlLabel2->setColour (TextEditor::textColourId, Colours::black);
     controlLabel2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (parameterComboBox = new ComboBox ("parameter combo box"));
+    addAndMakeVisible ((parameterComboBox = std::make_unique<ComboBox>("parameter combo box")).get());
     parameterComboBox->setEditableText (false);
     parameterComboBox->setJustificationType (Justification::centredLeft);
     parameterComboBox->setTextWhenNothingSelected (String());
     parameterComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     parameterComboBox->addListener (this);
 
-    addAndMakeVisible (controlLabel3 = new Label ("control label",
-                                                  "Type:"));
+    addAndMakeVisible ((controlLabel3 = std::make_unique<Label>("control label", "Type:")).get());
     controlLabel3->setFont (Font (15.00f, Font::plain));
     controlLabel3->setJustificationType (Justification::centredRight);
     controlLabel3->setEditable (false, false, false);
     controlLabel3->setColour (TextEditor::textColourId, Colours::black);
     controlLabel3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (typeComboBox = new ComboBox ("type combo box"));
+    addAndMakeVisible ((typeComboBox = std::make_unique<ComboBox>("type combo box")).get());
     typeComboBox->setEditableText (false);
     typeComboBox->setJustificationType (Justification::centredLeft);
     typeComboBox->setTextWhenNothingSelected (String());
     typeComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     typeComboBox->addListener (this);
 
-    addAndMakeVisible (inputRangeHighEditor = new TextEditor ("range hi text editor"));
+    addAndMakeVisible ((inputRangeHighEditor = std::make_unique<TextEditor>("range hi text editor")).get());
     inputRangeHighEditor->setMultiLine (false);
     inputRangeHighEditor->setReturnKeyStartsNewLine (false);
     inputRangeHighEditor->setReadOnly (false);
@@ -102,23 +98,21 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     inputRangeHighEditor->setPopupMenuEnabled (true);
     inputRangeHighEditor->setText (String());
 
-    addAndMakeVisible (rangeLabel2 = new Label ("range label",
-                                                "-"));
+    addAndMakeVisible ((rangeLabel2 = std::make_unique<Label>("range label", "-")).get());
     rangeLabel2->setFont (Font (15.00f, Font::plain));
     rangeLabel2->setJustificationType (Justification::centredLeft);
     rangeLabel2->setEditable (false, false, false);
     rangeLabel2->setColour (TextEditor::textColourId, Colours::black);
     rangeLabel2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (rangeLabel3 = new Label ("range label",
-                                                "Output Range:"));
+    addAndMakeVisible ((rangeLabel3 = std::make_unique<Label>("range label", "Output Range:")).get());
     rangeLabel3->setFont (Font (15.00f, Font::plain));
     rangeLabel3->setJustificationType (Justification::centredLeft);
     rangeLabel3->setEditable (false, false, false);
     rangeLabel3->setColour (TextEditor::textColourId, Colours::black);
     rangeLabel3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (outputRangeLowEditor = new TextEditor ("output range low text editor"));
+    addAndMakeVisible ((outputRangeLowEditor = std::make_unique<TextEditor>("output range low text editor")).get());
     outputRangeLowEditor->setMultiLine (false);
     outputRangeLowEditor->setReturnKeyStartsNewLine (false);
     outputRangeLowEditor->setReadOnly (false);
@@ -127,7 +121,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     outputRangeLowEditor->setPopupMenuEnabled (true);
     outputRangeLowEditor->setText (String());
 
-    addAndMakeVisible (outputRangeHighEditor = new TextEditor ("output range hi text editor"));
+    addAndMakeVisible ((outputRangeHighEditor = std::make_unique<TextEditor>("output range hi text editor")).get());
     outputRangeHighEditor->setMultiLine (false);
     outputRangeHighEditor->setReturnKeyStartsNewLine (false);
     outputRangeHighEditor->setReadOnly (false);
@@ -136,46 +130,42 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     outputRangeHighEditor->setPopupMenuEnabled (true);
     outputRangeHighEditor->setText (String());
 
-    addAndMakeVisible (rangeLabel4 = new Label ("range label",
-                                                "-"));
+    addAndMakeVisible ((rangeLabel4 = std::make_unique<Label>("range label", "-")).get());
     rangeLabel4->setFont (Font (15.00f, Font::plain));
     rangeLabel4->setJustificationType (Justification::centredLeft);
     rangeLabel4->setEditable (false, false, false);
     rangeLabel4->setColour (TextEditor::textColourId, Colours::black);
     rangeLabel4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (controlLabel4 = new Label ("control label",
-                                                  "Direction:"));
+    addAndMakeVisible ((controlLabel4 = std::make_unique<Label>("control label", "Direction:")).get());
     controlLabel4->setFont (Font (15.00f, Font::plain));
     controlLabel4->setJustificationType (Justification::centredRight);
     controlLabel4->setEditable (false, false, false);
     controlLabel4->setColour (TextEditor::textColourId, Colours::black);
     controlLabel4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (directionComboBox = new ComboBox ("direction combo box"));
+    addAndMakeVisible ((directionComboBox = std::make_unique<ComboBox>("direction combo box")).get());
     directionComboBox->setEditableText (false);
     directionComboBox->setJustificationType (Justification::centredLeft);
     directionComboBox->setTextWhenNothingSelected (String());
     directionComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     directionComboBox->addListener (this);
 
-    addAndMakeVisible (titleLabel = new Label ("title label",
-                                               "Control Mapping (Zone N, #M)"));
+    addAndMakeVisible ((titleLabel = std::make_unique<Label>("title label", "Control Mapping>(Zone N, #M)")).get());
     titleLabel->setFont (Font (15.00f, Font::bold));
     titleLabel->setJustificationType (Justification::centredLeft);
     titleLabel->setEditable (false, false, false);
     titleLabel->setColour (TextEditor::textColourId, Colours::black);
     titleLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (rangeLabel5 = new Label ("range label",
-                                                "Threshold:"));
+    addAndMakeVisible ((rangeLabel5 = std::make_unique<Label>("range label", "Threshold:")).get());
     rangeLabel5->setFont (Font (15.00f, Font::plain));
     rangeLabel5->setJustificationType (Justification::centredLeft);
     rangeLabel5->setEditable (false, false, false);
     rangeLabel5->setColour (TextEditor::textColourId, Colours::black);
     rangeLabel5->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (thresholdEditor = new TextEditor ("threshold text editor"));
+    addAndMakeVisible ((thresholdEditor = std::make_unique<TextEditor>("threshold text editor")).get());
     thresholdEditor->setMultiLine (false);
     thresholdEditor->setReturnKeyStartsNewLine (false);
     thresholdEditor->setReadOnly (false);
@@ -184,42 +174,40 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     thresholdEditor->setPopupMenuEnabled (true);
     thresholdEditor->setText (String());
 
-    addAndMakeVisible (cc14BitButton = new ToggleButton ("new toggle button"));
+    addAndMakeVisible ((cc14BitButton = std::make_unique<ToggleButton>("new toggle button")).get());
     cc14BitButton->setButtonText ("Use 14-bit CC");
     cc14BitButton->addListener (this);
 
-    addAndMakeVisible (ignore2FingersButton = new ToggleButton ("ignore 2 fingers toggle button"));
+    addAndMakeVisible ((ignore2FingersButton = std::make_unique<ToggleButton>("ignore 2 fingers toggle button")).get());
     ignore2FingersButton->setButtonText ("Ignore 2 Fingers");
     ignore2FingersButton->addListener (this);
 
-    addAndMakeVisible (ignore3FingersButton = new ToggleButton ("ignore 3 fingers toggle button"));
+    addAndMakeVisible ((ignore3FingersButton = std::make_unique<ToggleButton>("ignore 3 fingers toggle button")).get());
     ignore3FingersButton->setButtonText ("Ignore 3 Fingers");
     ignore3FingersButton->addListener (this);
 
-    addAndMakeVisible (controlLabel6 = new Label ("control label",
-                                                  "Out of Range:"));
+    addAndMakeVisible ((controlLabel6 = std::make_unique<Label>("control label", "Out of Range:")).get());
     controlLabel6->setFont (Font (15.00f, Font::plain));
     controlLabel6->setJustificationType (Justification::centredRight);
     controlLabel6->setEditable (false, false, false);
     controlLabel6->setColour (TextEditor::textColourId, Colours::black);
     controlLabel6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (outOfRangeComboBox = new ComboBox ("out of range combo box"));
+    addAndMakeVisible ((outOfRangeComboBox = std::make_unique<ComboBox>("out of range combo box")).get());
     outOfRangeComboBox->setEditableText (false);
     outOfRangeComboBox->setJustificationType (Justification::centredLeft);
     outOfRangeComboBox->setTextWhenNothingSelected (String());
     outOfRangeComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     outOfRangeComboBox->addListener (this);
 
-    addAndMakeVisible (rangeLabel6 = new Label ("range label",
-                                                "Default Output:"));
+    addAndMakeVisible ((rangeLabel6 = std::make_unique<Label>("range label", "Default Output:")).get());
     rangeLabel6->setFont (Font (15.00f, Font::plain));
     rangeLabel6->setJustificationType (Justification::centredLeft);
     rangeLabel6->setEditable (false, false, false);
     rangeLabel6->setColour (TextEditor::textColourId, Colours::black);
     rangeLabel6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (outputDefaultEditor = new TextEditor ("output default text editor"));
+    addAndMakeVisible ((outputDefaultEditor = std::make_unique<TextEditor>("output default text editor")).get());
     outputDefaultEditor->setMultiLine (false);
     outputDefaultEditor->setReturnKeyStartsNewLine (false);
     outputDefaultEditor->setReadOnly (false);
@@ -355,35 +343,35 @@ void TouchkeyControlMappingExtendedEditor::comboBoxChanged (ComboBox* comboBoxTh
     //[UsercomboBoxChanged_Pre]
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == controlComboBox)
+    if (comboBoxThatHasChanged == controlComboBox.get())
     {
         //[UserComboBoxCode_controlComboBox] -- add your combo box handling code here..
         int controller = controlComboBox->getSelectedId();
         factory_.setController(controller);
         //[/UserComboBoxCode_controlComboBox]
     }
-    else if (comboBoxThatHasChanged == parameterComboBox)
+    else if (comboBoxThatHasChanged == parameterComboBox.get())
     {
         //[UserComboBoxCode_parameterComboBox] -- add your combo box handling code here..
         int param = parameterComboBox->getSelectedId();
         factory_.setInputParameter(param);
         //[/UserComboBoxCode_parameterComboBox]
     }
-    else if (comboBoxThatHasChanged == typeComboBox)
+    else if (comboBoxThatHasChanged == typeComboBox.get())
     {
         //[UserComboBoxCode_typeComboBox] -- add your combo box handling code here..
         int type = typeComboBox->getSelectedId();
         factory_.setInputType(type);
         //[/UserComboBoxCode_typeComboBox]
     }
-    else if (comboBoxThatHasChanged == directionComboBox)
+    else if (comboBoxThatHasChanged == directionComboBox.get())
     {
         //[UserComboBoxCode_directionComboBox] -- add your combo box handling code here..
         int direction = directionComboBox->getSelectedId();
         factory_.setDirection(direction);
         //[/UserComboBoxCode_directionComboBox]
     }
-    else if (comboBoxThatHasChanged == outOfRangeComboBox)
+    else if (comboBoxThatHasChanged == outOfRangeComboBox.get())
     {
         //[UserComboBoxCode_outOfRangeComboBox] -- add your combo box handling code here..
         int behavior = outOfRangeComboBox->getSelectedId();
@@ -400,19 +388,19 @@ void TouchkeyControlMappingExtendedEditor::buttonClicked (Button* buttonThatWasC
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == cc14BitButton)
+    if (buttonThatWasClicked == cc14BitButton.get())
     {
         //[UserButtonCode_cc14BitButton] -- add your button handler code here..
         factory_.setUses14BitControl(cc14BitButton->getToggleState());
         //[/UserButtonCode_cc14BitButton]
     }
-    else if (buttonThatWasClicked == ignore2FingersButton)
+    else if (buttonThatWasClicked == ignore2FingersButton.get())
     {
         //[UserButtonCode_ignore2FingersButton] -- add your button handler code here..
         factory_.setIgnoresTwoFingers(ignore2FingersButton->getToggleState());
         //[/UserButtonCode_ignore2FingersButton]
     }
-    else if (buttonThatWasClicked == ignore3FingersButton)
+    else if (buttonThatWasClicked == ignore3FingersButton.get())
     {
         //[UserButtonCode_ignore3FingersButton] -- add your button handler code here..
         factory_.setIgnoresThreeFingers(ignore3FingersButton->getToggleState());
@@ -429,28 +417,28 @@ void TouchkeyControlMappingExtendedEditor::buttonClicked (Button* buttonThatWasC
 
 void TouchkeyControlMappingExtendedEditor::textEditorReturnKeyPressed(TextEditor &editor)
 {
-    if(&editor == inputRangeLowEditor) {
+    if(&editor == inputRangeLowEditor.get()) {
         float range = atof(inputRangeLowEditor->getText().toUTF8());
         factory_.setRangeInputMin(range);
         factory_.setRangeInputCenter(range);
     }
-    else if(&editor == inputRangeHighEditor) {
+    else if(&editor == inputRangeHighEditor.get()) {
         float range = atof(inputRangeHighEditor->getText().toUTF8());
         factory_.setRangeInputMax(range);
     }
-    else if(&editor == outputRangeLowEditor) {
+    else if(&editor == outputRangeLowEditor.get()) {
         float range = atof(outputRangeLowEditor->getText().toUTF8());
         factory_.setRangeOutputMin(range);
     }
-    else if(&editor == outputRangeHighEditor) {
+    else if(&editor == outputRangeHighEditor.get()) {
         float range = atof(outputRangeHighEditor->getText().toUTF8());
         factory_.setRangeOutputMax(range);
     }
-    else if(&editor == outputDefaultEditor) {
+    else if(&editor == outputDefaultEditor.get()) {
         float range = atof(outputDefaultEditor->getText().toUTF8());
         factory_.setRangeOutputDefault(range);
     }
-    else if(&editor == thresholdEditor) {
+    else if(&editor == thresholdEditor.get()) {
         float thresh = atof(thresholdEditor->getText().toUTF8());
         factory_.setThreshold(thresh);
     }
@@ -476,7 +464,7 @@ void TouchkeyControlMappingExtendedEditor::synchronize()
         float value = factory_.getRangeInputMin();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
 #else
         snprintf(st, 16, "%.2f", value);
 #endif
@@ -487,7 +475,7 @@ void TouchkeyControlMappingExtendedEditor::synchronize()
         float value = factory_.getRangeInputMax();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
 #else
         snprintf(st, 16, "%.2f", value);
 #endif
@@ -499,7 +487,7 @@ void TouchkeyControlMappingExtendedEditor::synchronize()
         float value = factory_.getRangeOutputMin();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
 #else
         snprintf(st, 16, "%.2f", value);
 #endif
@@ -511,7 +499,7 @@ void TouchkeyControlMappingExtendedEditor::synchronize()
         float value = factory_.getRangeOutputMax();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
 #else
         snprintf(st, 16, "%.2f", value);
 #endif
@@ -523,7 +511,7 @@ void TouchkeyControlMappingExtendedEditor::synchronize()
         float value = factory_.getRangeOutputDefault();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.2f", value);
 #else
         snprintf(st, 16, "%.2f", value);
 #endif

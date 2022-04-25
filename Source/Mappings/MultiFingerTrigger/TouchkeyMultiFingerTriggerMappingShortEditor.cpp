@@ -33,52 +33,49 @@ const int TouchkeyMultiFingerTriggerMappingShortEditor::kNoteOffset = 1;
 TouchkeyMultiFingerTriggerMappingShortEditor::TouchkeyMultiFingerTriggerMappingShortEditor (TouchkeyMultiFingerTriggerMappingFactory& factory)
     : factory_(factory)
 {
-    addAndMakeVisible (controlLabel = new Label ("control label",
-                                                 "Touches:"));
+    addAndMakeVisible ((controlLabel = std::make_unique<Label>("control label", "Touches:")).get());
     controlLabel->setFont (Font (15.00f, Font::plain));
     controlLabel->setJustificationType (Justification::centredRight);
     controlLabel->setEditable (false, false, false);
     controlLabel->setColour (TextEditor::textColourId, Colours::black);
     controlLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (touchesComboBox = new ComboBox ("control combo box"));
+    addAndMakeVisible ((touchesComboBox = std::make_unique<ComboBox>("control combo box")).get());
     touchesComboBox->setEditableText (false);
     touchesComboBox->setJustificationType (Justification::centredLeft);
     touchesComboBox->setTextWhenNothingSelected (String());
     touchesComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     touchesComboBox->addListener (this);
 
-    addAndMakeVisible (controlLabel2 = new Label ("control label",
-                                                  "Repeat Taps:"));
+    addAndMakeVisible ((controlLabel2 = std::make_unique<Label>("control label", "Repeat Taps:")).get());
     controlLabel2->setFont (Font (15.00f, Font::plain));
     controlLabel2->setJustificationType (Justification::centredLeft);
     controlLabel2->setEditable (false, false, false);
     controlLabel2->setColour (TextEditor::textColourId, Colours::black);
     controlLabel2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (tapsComboBox = new ComboBox ("control combo box"));
+    addAndMakeVisible ((tapsComboBox = std::make_unique<ComboBox>("control combo box")).get());
     tapsComboBox->setEditableText (false);
     tapsComboBox->setJustificationType (Justification::centredLeft);
     tapsComboBox->setTextWhenNothingSelected (String());
     tapsComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     tapsComboBox->addListener (this);
 
-    addAndMakeVisible (controlLabel3 = new Label ("control label",
-                                                  "Note:"));
+    addAndMakeVisible ((controlLabel3 = std::make_unique<Label>("control label", "Note:")).get());
     controlLabel3->setFont (Font (15.00f, Font::plain));
     controlLabel3->setJustificationType (Justification::centredRight);
     controlLabel3->setEditable (false, false, false);
     controlLabel3->setColour (TextEditor::textColourId, Colours::black);
     controlLabel3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (noteComboBox = new ComboBox ("control combo box"));
+    addAndMakeVisible ((noteComboBox = std::make_unique<ComboBox>("control combo box")).get());
     noteComboBox->setEditableText (false);
     noteComboBox->setJustificationType (Justification::centredLeft);
     noteComboBox->setTextWhenNothingSelected (String());
     noteComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     noteComboBox->addListener (this);
 
-    addAndMakeVisible (sendOnReleaseButton = new ToggleButton ("new toggle button"));
+    addAndMakeVisible ((sendOnReleaseButton = std::make_unique<ToggleButton>("new toggle button")).get());
     sendOnReleaseButton->setButtonText ("Also send on release");
     sendOnReleaseButton->addListener (this);
 
@@ -151,19 +148,19 @@ void TouchkeyMultiFingerTriggerMappingShortEditor::comboBoxChanged (ComboBox* co
     //[UsercomboBoxChanged_Pre]
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == touchesComboBox)
+    if (comboBoxThatHasChanged == touchesComboBox.get())
     {
         //[UserComboBoxCode_touchesComboBox] -- add your combo box handling code here..
         factory_.setTouchesForTrigger(touchesComboBox->getSelectedId());
         //[/UserComboBoxCode_touchesComboBox]
     }
-    else if (comboBoxThatHasChanged == tapsComboBox)
+    else if (comboBoxThatHasChanged == tapsComboBox.get())
     {
         //[UserComboBoxCode_tapsComboBox] -- add your combo box handling code here..
         factory_.setConsecutiveTapsForTrigger(tapsComboBox->getSelectedId());
         //[/UserComboBoxCode_tapsComboBox]
     }
-    else if (comboBoxThatHasChanged == noteComboBox)
+    else if (comboBoxThatHasChanged == noteComboBox.get())
     {
         //[UserComboBoxCode_noteComboBox] -- add your combo box handling code here..
         int note = noteComboBox->getSelectedId();
@@ -185,7 +182,7 @@ void TouchkeyMultiFingerTriggerMappingShortEditor::buttonClicked (Button* button
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == sendOnReleaseButton)
+    if (buttonThatWasClicked == sendOnReleaseButton.get())
     {
         //[UserButtonCode_sendOnReleaseButton] -- add your button handler code here..
         if(sendOnReleaseButton->getToggleState()) {

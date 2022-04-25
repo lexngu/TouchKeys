@@ -195,8 +195,8 @@ void TouchkeyReleaseAngleMappingFactory::setDownVelocity(int sequence, int veloc
 #ifndef TOUCHKEYS_NO_GUI
 // ***** GUI Support *****
 
-MappingEditorComponent* TouchkeyReleaseAngleMappingFactory::createExtendedEditor() {
-    return new TouchkeyReleaseAngleMappingExtendedEditor(*this);
+std::unique_ptr<MappingEditorComponent> TouchkeyReleaseAngleMappingFactory::createExtendedEditor() {
+    return std::make_unique<TouchkeyReleaseAngleMappingExtendedEditor>(*this);
 }
 #endif
 

@@ -31,7 +31,7 @@
 TouchkeyVibratoMappingShortEditor::TouchkeyVibratoMappingShortEditor (TouchkeyVibratoMappingFactory& factory)
     : factory_(factory)
 {
-    addAndMakeVisible (rangeEditor = new TextEditor ("range text editor"));
+    addAndMakeVisible ((rangeEditor = std::make_unique<TextEditor>("range text editor")).get());
     rangeEditor->setMultiLine (false);
     rangeEditor->setReturnKeyStartsNewLine (false);
     rangeEditor->setReadOnly (false);
@@ -40,15 +40,14 @@ TouchkeyVibratoMappingShortEditor::TouchkeyVibratoMappingShortEditor (TouchkeyVi
     rangeEditor->setPopupMenuEnabled (true);
     rangeEditor->setText (String());
 
-    addAndMakeVisible (rangeLabel = new Label ("range label",
-                                               "Range:"));
+    addAndMakeVisible ((rangeLabel = std::make_unique<Label>("range label", "Range:")).get());
     rangeLabel->setFont (Font (15.00f, Font::plain));
     rangeLabel->setJustificationType (Justification::centredLeft);
     rangeLabel->setEditable (false, false, false);
     rangeLabel->setColour (TextEditor::textColourId, Colours::black);
     rangeLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (thresholdEditor = new TextEditor ("threshold text editor"));
+    addAndMakeVisible ((thresholdEditor = std::make_unique<TextEditor>("threshold text editor")).get());
     thresholdEditor->setMultiLine (false);
     thresholdEditor->setReturnKeyStartsNewLine (false);
     thresholdEditor->setReadOnly (false);
@@ -57,23 +56,21 @@ TouchkeyVibratoMappingShortEditor::TouchkeyVibratoMappingShortEditor (TouchkeyVi
     thresholdEditor->setPopupMenuEnabled (true);
     thresholdEditor->setText (String());
 
-    addAndMakeVisible (thresholdLabel = new Label ("threshold label",
-                                                   "Threshold:"));
+    addAndMakeVisible ((thresholdLabel = std::make_unique<Label>("threshold label", "Threshold:")).get());
     thresholdLabel->setFont (Font (15.00f, Font::plain));
     thresholdLabel->setJustificationType (Justification::centredLeft);
     thresholdLabel->setEditable (false, false, false);
     thresholdLabel->setColour (TextEditor::textColourId, Colours::black);
     thresholdLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (controlLabel = new Label ("control label",
-                                                 "Control:"));
+    addAndMakeVisible ((controlLabel = std::make_unique<Label>("control label", "Control:")).get());
     controlLabel->setFont (Font (15.00f, Font::plain));
     controlLabel->setJustificationType (Justification::centredLeft);
     controlLabel->setEditable (false, false, false);
     controlLabel->setColour (TextEditor::textColourId, Colours::black);
     controlLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (controlComboBox = new ComboBox ("control combo box"));
+    addAndMakeVisible ((controlComboBox = std::make_unique<ComboBox>("control combo box")).get());
     controlComboBox->setEditableText (false);
     controlComboBox->setJustificationType (Justification::centredLeft);
     controlComboBox->setTextWhenNothingSelected (String());
@@ -144,7 +141,7 @@ void TouchkeyVibratoMappingShortEditor::comboBoxChanged (ComboBox* comboBoxThatH
     //[UsercomboBoxChanged_Pre]
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == controlComboBox)
+    if (comboBoxThatHasChanged == controlComboBox.get())
     {
         //[UserComboBoxCode_controlComboBox] -- add your combo box handling code here..
         int control = controlComboBox->getSelectedId();
@@ -162,11 +159,11 @@ void TouchkeyVibratoMappingShortEditor::comboBoxChanged (ComboBox* comboBoxThatH
 
 void TouchkeyVibratoMappingShortEditor::textEditorReturnKeyPressed(TextEditor &editor)
 {
-    if(&editor == rangeEditor) {
+    if(&editor == rangeEditor.get()) {
         float range = atof(rangeEditor->getText().toUTF8());
         factory_.setVibratoRange(range);
     }
-    else if(&editor == thresholdEditor) {
+    else if(&editor == thresholdEditor.get()) {
         float threshold = atof(thresholdEditor->getText().toUTF8());
         factory_.setVibratoThreshold(threshold);
     }

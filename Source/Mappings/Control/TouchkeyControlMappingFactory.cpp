@@ -224,12 +224,12 @@ void TouchkeyControlMappingFactory::setUses14BitControl(bool use) {
 
 #ifndef TOUCHKEYS_NO_GUI
 // ***** GUI Support *****
-MappingEditorComponent* TouchkeyControlMappingFactory::createBasicEditor() {
-    return new TouchkeyControlMappingShortEditor(*this);
+std::unique_ptr<MappingEditorComponent> TouchkeyControlMappingFactory::createBasicEditor() {
+    return std::make_unique<TouchkeyControlMappingShortEditor>(*this);
 }
 
-MappingEditorComponent* TouchkeyControlMappingFactory::createExtendedEditor() {
-    return new TouchkeyControlMappingExtendedEditor(*this);
+std::unique_ptr<MappingEditorComponent> TouchkeyControlMappingFactory::createExtendedEditor() {
+    return std::make_unique<TouchkeyControlMappingExtendedEditor>(*this);
 }
 #endif
 

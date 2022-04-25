@@ -158,8 +158,8 @@ void TouchkeyVibratoMappingFactory::setVibratoTimeout(timestamp_diff_type timeou
 
 #ifndef TOUCHKEYS_NO_GUI
 // ***** GUI Support *****
-MappingEditorComponent* TouchkeyVibratoMappingFactory::createBasicEditor() {
-    return new TouchkeyVibratoMappingShortEditor(*this);
+std::unique_ptr<MappingEditorComponent> TouchkeyVibratoMappingFactory::createBasicEditor() {
+    return std::make_unique<TouchkeyVibratoMappingShortEditor>(*this);
 }
 #endif
 

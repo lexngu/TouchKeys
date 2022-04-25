@@ -132,9 +132,9 @@ public:
     // its own to adjust every parameter.
     
     virtual bool hasBasicEditor() { return false; }
-    virtual MappingEditorComponent* createBasicEditor() { return nullptr; }
+    virtual std::unique_ptr<MappingEditorComponent> createBasicEditor() { return nullptr; }
     virtual bool hasExtendedEditor() { return false; }
-    virtual MappingEditorComponent* createExtendedEditor() { return nullptr; }
+    virtual std::unique_ptr<MappingEditorComponent> createExtendedEditor() { return nullptr; }
 #endif
     
     // ****** OSC Control ******

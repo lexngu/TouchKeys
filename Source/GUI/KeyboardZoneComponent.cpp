@@ -31,53 +31,49 @@
 KeyboardZoneComponent::KeyboardZoneComponent ()
     : controller_(0), keyboardSegment_(0)
 {
-    addAndMakeVisible (mappingListComponent = new MappingListComponent());
-    addAndMakeVisible (midiOutputGroupComponent = new GroupComponent ("MIDI input group",
-                                                                      "MIDI Output"));
+    addAndMakeVisible ((mappingListComponent = std::make_unique<MappingListComponent>()).get());
+    addAndMakeVisible ((midiOutputGroupComponent = std::make_unique<GroupComponent>("MIDI input group", "MIDI Output")).get());
 
-    addAndMakeVisible (midiOutputDeviceComboBox = new ComboBox ("MIDI input combo box"));
+    addAndMakeVisible ((midiOutputDeviceComboBox = std::make_unique<ComboBox>("MIDI input combo box")).get());
     midiOutputDeviceComboBox->setEditableText (false);
     midiOutputDeviceComboBox->setJustificationType (Justification::centredLeft);
     midiOutputDeviceComboBox->setTextWhenNothingSelected (String());
     midiOutputDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiOutputDeviceComboBox->addListener (this);
 
-    addAndMakeVisible (label4 = new Label ("new label",
-                                           "Device:"));
+    addAndMakeVisible ((label4 = std::make_unique<Label>("new label", "Device:")).get());
     label4->setFont (Font (15.00f, Font::plain));
     label4->setJustificationType (Justification::centredLeft);
     label4->setEditable (false, false, false);
     label4->setColour (TextEditor::textColourId, Colours::black);
     label4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (label5 = new Label ("new label",
-                                           "Mode:"));
+    addAndMakeVisible ((label5 = std::make_unique<Label>("new label", "Mode:")).get());
     label5->setFont (Font (15.00f, Font::plain));
     label5->setJustificationType (Justification::centredLeft);
     label5->setEditable (false, false, false);
     label5->setColour (TextEditor::textColourId, Colours::black);
     label5->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (midiOutputModeComboBox = new ComboBox ("MIDI input combo box"));
+    addAndMakeVisible ((midiOutputModeComboBox = std::make_unique<ComboBox>("MIDI input combo box")).get());
     midiOutputModeComboBox->setEditableText (false);
     midiOutputModeComboBox->setJustificationType (Justification::centredLeft);
     midiOutputModeComboBox->setTextWhenNothingSelected (String());
     midiOutputModeComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiOutputModeComboBox->addListener (this);
 
-    addAndMakeVisible (midiOutputVoiceStealingButton = new ToggleButton ("Voice stealing button"));
+    addAndMakeVisible ((midiOutputVoiceStealingButton = std::make_unique<ToggleButton>("Voice stealing button")).get());
     midiOutputVoiceStealingButton->setButtonText ("Voice stealing");
     midiOutputVoiceStealingButton->addListener (this);
 
-    addAndMakeVisible (label2 = new Label ("new label",
-                                           "Channels:"));
+    addAndMakeVisible ((label2 = std::make_unique<Label>("new label", "Channels:")).get());
     label2->setFont (Font (15.00f, Font::plain));
     label2->setJustificationType (Justification::centredLeft);
     label2->setEditable (false, false, false);
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (midiOutputChannelLowEditor = new TextEditor ("new text editor"));
+    addAndMakeVisible ((midiOutputChannelLowEditor = std::make_unique<TextEditor>("new text editor")).get());
     midiOutputChannelLowEditor->setMultiLine (false);
     midiOutputChannelLowEditor->setReturnKeyStartsNewLine (false);
     midiOutputChannelLowEditor->setReadOnly (false);
@@ -86,7 +82,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     midiOutputChannelLowEditor->setPopupMenuEnabled (true);
     midiOutputChannelLowEditor->setText (String());
 
-    addAndMakeVisible (midiOutputChannelHighEditor = new TextEditor ("new text editor"));
+    addAndMakeVisible ((midiOutputChannelHighEditor = std::make_unique<TextEditor>("new text editor")).get());
     midiOutputChannelHighEditor->setMultiLine (false);
     midiOutputChannelHighEditor->setReturnKeyStartsNewLine (false);
     midiOutputChannelHighEditor->setReadOnly (false);
@@ -95,48 +91,44 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     midiOutputChannelHighEditor->setPopupMenuEnabled (true);
     midiOutputChannelHighEditor->setText (String());
 
-    addAndMakeVisible (label3 = new Label ("new label",
-                                           "to"));
+    addAndMakeVisible ((label3 = std::make_unique<Label>("new label", "to")).get());
     label3->setFont (Font (15.00f, Font::plain));
     label3->setJustificationType (Justification::centredLeft);
     label3->setEditable (false, false, false);
     label3->setColour (TextEditor::textColourId, Colours::black);
     label3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (midiOutputGroupComponent2 = new GroupComponent ("MIDI input group",
-                                                                       "Range"));
+    addAndMakeVisible ((midiOutputGroupComponent2 = std::make_unique<GroupComponent>("MIDI input group", "Range")).get());
 
-    addAndMakeVisible (label7 = new Label ("new label",
-                                           "to"));
+    addAndMakeVisible ((label7 = std::make_unique<Label>("new label", "to")).get());
     label7->setFont (Font (15.00f, Font::plain));
     label7->setJustificationType (Justification::centredLeft);
     label7->setEditable (false, false, false);
     label7->setColour (TextEditor::textColourId, Colours::black);
     label7->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (rangeLowComboBox = new ComboBox ("range low combo box"));
+    addAndMakeVisible ((rangeLowComboBox = std::make_unique<ComboBox>("range low combo box")).get());
     rangeLowComboBox->setEditableText (true);
     rangeLowComboBox->setJustificationType (Justification::centredLeft);
     rangeLowComboBox->setTextWhenNothingSelected (String());
     rangeLowComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     rangeLowComboBox->addListener (this);
 
-    addAndMakeVisible (rangeHighComboBox = new ComboBox ("range high combo combo box"));
+    addAndMakeVisible ((rangeHighComboBox = std::make_unique<ComboBox>("range high combo combo box")).get());
     rangeHighComboBox->setEditableText (true);
     rangeHighComboBox->setJustificationType (Justification::centredLeft);
     rangeHighComboBox->setTextWhenNothingSelected (String());
     rangeHighComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     rangeHighComboBox->addListener (this);
 
-    addAndMakeVisible (label6 = new Label ("new label",
-                                           "Transpose:"));
+    addAndMakeVisible ((label6 = std::make_unique<Label>("new label", "Transpose:")).get());
     label6->setFont (Font (15.00f, Font::plain));
     label6->setJustificationType (Justification::centredLeft);
     label6->setEditable (false, false, false);
     label6->setColour (TextEditor::textColourId, Colours::black);
     label6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (midiOutputTransposeEditor = new TextEditor ("transposition text editor"));
+    addAndMakeVisible ((midiOutputTransposeEditor = std::make_unique<TextEditor>("transposition text editor")).get());
     midiOutputTransposeEditor->setMultiLine (false);
     midiOutputTransposeEditor->setReturnKeyStartsNewLine (false);
     midiOutputTransposeEditor->setReadOnly (false);
@@ -145,27 +137,25 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     midiOutputTransposeEditor->setPopupMenuEnabled (true);
     midiOutputTransposeEditor->setText (String());
 
-    addAndMakeVisible (label8 = new Label ("new label",
-                                           "Mappings:"));
+    addAndMakeVisible ((label8 = std::make_unique<Label>("new label", "Mappings:")).get());
     label8->setFont (Font (15.00f, Font::plain));
     label8->setJustificationType (Justification::centredLeft);
     label8->setEditable (false, false, false);
     label8->setColour (TextEditor::textColourId, Colours::black);
     label8->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (addMappingButton = new TextButton ("add mapping button"));
+    addAndMakeVisible ((addMappingButton = std::make_unique<TextButton>("add mapping button")).get());
     addMappingButton->setButtonText ("Add Mapping...");
     addMappingButton->addListener (this);
 
-    addAndMakeVisible (label9 = new Label ("new label",
-                                           "Pitchwheel range:"));
+    addAndMakeVisible ((label9 = std::make_unique<Label>("new label", "Pitchwheel range:")).get());
     label9->setFont (Font (15.00f, Font::plain));
     label9->setJustificationType (Justification::centredLeft);
     label9->setEditable (false, false, false);
     label9->setColour (TextEditor::textColourId, Colours::black);
     label9->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (pitchWheelRangeEditor = new TextEditor ("pitch wheel range editor"));
+    addAndMakeVisible ((pitchWheelRangeEditor = std::make_unique<TextEditor>("pitch wheel range editor")).get());
     pitchWheelRangeEditor->setMultiLine (false);
     pitchWheelRangeEditor->setReturnKeyStartsNewLine (false);
     pitchWheelRangeEditor->setReadOnly (false);
@@ -174,7 +164,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     pitchWheelRangeEditor->setPopupMenuEnabled (true);
     pitchWheelRangeEditor->setText (String());
 
-    addAndMakeVisible (keyboardControllersButton = new TextButton ("keyboard controllers button"));
+    addAndMakeVisible ((keyboardControllersButton = std::make_unique<TextButton>("keyboard controllers button")).get());
     keyboardControllersButton->setButtonText (" Controllers...");
     keyboardControllersButton->addListener (this);
 
@@ -296,7 +286,7 @@ void KeyboardZoneComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
         return;
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == midiOutputDeviceComboBox)
+    if (comboBoxThatHasChanged == midiOutputDeviceComboBox.get())
     {
         //[UserComboBoxCode_midiOutputDeviceComboBox] -- add your combo box handling code here..
 
@@ -319,20 +309,20 @@ void KeyboardZoneComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
         }
         //[/UserComboBoxCode_midiOutputDeviceComboBox]
     }
-    else if (comboBoxThatHasChanged == midiOutputModeComboBox)
+    else if (comboBoxThatHasChanged == midiOutputModeComboBox.get())
     {
         //[UserComboBoxCode_midiOutputModeComboBox] -- add your combo box handling code here..
         int mode = midiOutputModeComboBox->getSelectedId() - kMidiOutputModeComboBoxOffset;
         keyboardSegment_->setMode(mode);
         //[/UserComboBoxCode_midiOutputModeComboBox]
     }
-    else if (comboBoxThatHasChanged == rangeLowComboBox)
+    else if (comboBoxThatHasChanged == rangeLowComboBox.get())
     {
         //[UserComboBoxCode_rangeLowComboBox] -- add your combo box handling code here..
         updateSegmentRange();
         //[/UserComboBoxCode_rangeLowComboBox]
     }
-    else if (comboBoxThatHasChanged == rangeHighComboBox)
+    else if (comboBoxThatHasChanged == rangeHighComboBox.get())
     {
         //[UserComboBoxCode_rangeHighComboBox] -- add your combo box handling code here..
         updateSegmentRange();
@@ -350,20 +340,20 @@ void KeyboardZoneComponent::buttonClicked (Button* buttonThatWasClicked)
         return;
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == midiOutputVoiceStealingButton)
+    if (buttonThatWasClicked == midiOutputVoiceStealingButton.get())
     {
         //[UserButtonCode_midiOutputVoiceStealingButton] -- add your button handler code here..
         bool stealing = midiOutputVoiceStealingButton->getToggleState();
         keyboardSegment_->setVoiceStealingEnabled(stealing);
         //[/UserButtonCode_midiOutputVoiceStealingButton]
     }
-    else if (buttonThatWasClicked == addMappingButton)
+    else if (buttonThatWasClicked == addMappingButton.get())
     {
         //[UserButtonCode_addMappingButton] -- add your button handler code here..
         createMappingListPopup();
         //[/UserButtonCode_addMappingButton]
     }
-    else if (buttonThatWasClicked == keyboardControllersButton)
+    else if (buttonThatWasClicked == keyboardControllersButton.get())
     {
         //[UserButtonCode_keyboardControllersButton] -- add your button handler code here..
         createKeyboardControllerPopup();
@@ -383,8 +373,8 @@ void KeyboardZoneComponent::textEditorReturnKeyPressed(TextEditor &editor)
     if(keyboardSegment_ == 0)
         return;
 
-    if(&editor == midiOutputChannelLowEditor ||
-       &editor == midiOutputChannelHighEditor) {
+    if(&editor == midiOutputChannelLowEditor.get() ||
+       &editor == midiOutputChannelHighEditor.get()) {
         // Change range of MIDI output channels
         int rangeLow = atoi(midiOutputChannelLowEditor->getText().toUTF8());
         int rangeHigh = atoi(midiOutputChannelHighEditor->getText().toUTF8());
@@ -403,7 +393,7 @@ void KeyboardZoneComponent::textEditorReturnKeyPressed(TextEditor &editor)
             polyphony = 1;
         keyboardSegment_->setPolyphony(polyphony);
     }
-    else if(&editor == midiOutputTransposeEditor) {
+    else if(&editor == midiOutputTransposeEditor.get()) {
         // Change output transposition (limiting possible range to +/- 4 octaves)
         int transpose = atoi(midiOutputTransposeEditor->getText().toUTF8());
         if(transpose < -48)
@@ -412,7 +402,7 @@ void KeyboardZoneComponent::textEditorReturnKeyPressed(TextEditor &editor)
             transpose = 48;
         keyboardSegment_->setOutputTransposition(transpose);
     }
-    else if(&editor == pitchWheelRangeEditor) {
+    else if(&editor == pitchWheelRangeEditor.get()) {
         float range = atof(pitchWheelRangeEditor->getText().toUTF8());
         keyboardSegment_->setMidiPitchWheelRange(range);
     }
@@ -495,7 +485,7 @@ void KeyboardZoneComponent::synchronize(bool forceUpdates)
         float value = keyboardSegment_->midiPitchWheelRange();
         char st[16];
 #ifdef _MSC_VER
-		_snprintf_s(st, 16, _TRUNCATE, "%.1f", value);
+        _snprintf_s(st, 16, _TRUNCATE, "%.1f", value);
 #else
         snprintf(st, 16, "%.1f", value);
 #endif
@@ -585,7 +575,7 @@ void KeyboardZoneComponent::updateOutputDeviceList()
 #ifndef JUCE_WINDOWS
     char virtualPortName[24];
     snprintf(virtualPortName, 24, "Virtual Port (%d)", keyboardSegment_->outputPort());
-	midiOutputDeviceComboBox->addItem(virtualPortName, 2);
+    midiOutputDeviceComboBox->addItem(virtualPortName, 2);
 #endif
 
     // Check whether the currently selected ID still exists while
@@ -625,7 +615,7 @@ void KeyboardZoneComponent::createMappingListPopup()
             menu.addItem(i + 1, MidiKeyboardSegment::mappingFactoryNameForIndex(i));
     }
 
-    menu.showMenuAsync(PopupMenu::Options().withTargetComponent(addMappingButton),
+    menu.showMenuAsync(PopupMenu::Options().withTargetComponent(addMappingButton.get()),
                        ModalCallbackFunction::forComponent(staticMappingChosenCallback, this));
 }
 
@@ -647,7 +637,7 @@ void KeyboardZoneComponent::createKeyboardControllerPopup()
     menu.addItem(kKeyboardControllerRetransmitPedals, "Pedals", true, keyboardSegment_->usesKeyboardPedals());
     menu.addItem(kKeyboardControllerRetransmitOthers, "Other Controllers", true, keyboardSegment_->usesKeyboardMIDIControllers());
 
-    menu.showMenuAsync(PopupMenu::Options().withTargetComponent(keyboardControllersButton),
+    menu.showMenuAsync(PopupMenu::Options().withTargetComponent(keyboardControllersButton.get()),
                        ModalCallbackFunction::forComponent(staticKeyboardControllerChosenCallback, this));
 }
 

@@ -45,12 +45,12 @@ public:
     void initialise (const String& commandLine) {
         // This method is where you should put your application's initialisation code..
 
-        mainWindow_ = new MainWindow(controller_);
-        keyboardDisplayWindow_ = new GraphicsDisplayWindow("TouchKeys Display", controller_.keyboardDisplay());
-        preferencesWindow_ = new PreferencesWindow(controller_);
+        mainWindow_ = std::make_unique<MainWindow>(controller_);
+        keyboardDisplayWindow_ = std::make_unique<GraphicsDisplayWindow>("TouchKeys Display", controller_.keyboardDisplay());
+        preferencesWindow_ = std::make_unique<PreferencesWindow>(controller_);
         
-        controller_.setKeyboardDisplayWindow(keyboardDisplayWindow_);
-        controller_.setPreferencesWindow(preferencesWindow_);
+        controller_.setKeyboardDisplayWindow(keyboardDisplayWindow_.get());
+        controller_.setPreferencesWindow(preferencesWindow_.get());
         controller_.initialise();
     }
 
