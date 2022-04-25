@@ -137,6 +137,8 @@ void KeyboardDisplay::setDisplaySize(float width, float height) {
 // Render the keyboard display
 
 void KeyboardDisplay::render() {
+    using namespace ::juce::gl;
+    
 	if(lowestMidiNote_ == highestMidiNote_)
 		return;
 	
@@ -461,6 +463,8 @@ void KeyboardDisplay::removeKeyDivision(void *who) {
 // Coordinates give the lower-left corner of the key
 
 void KeyboardDisplay::drawWhiteKey(float x, float y, int shape, bool first, bool last, bool highlighted, int divisions) {
+    using namespace ::juce::gl;
+    
 	// First and last keys will have special geometry since there is no black key below
 	// Figure out the precise geometry in this case...
 	
@@ -539,6 +543,8 @@ void KeyboardDisplay::drawWhiteKey(float x, float y, int shape, bool first, bool
 // Draw the outline of a black key, given its lower-left corner
 
 void KeyboardDisplay::drawBlackKey(float x, float y, bool highlighted, int divisions) {
+    using namespace ::juce::gl;
+    
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	if(highlighted)
 		glColor3f(0.7, 0.0, 0.0);
@@ -567,6 +573,8 @@ void KeyboardDisplay::drawBlackKey(float x, float y, bool highlighted, int divis
 // Draw a circle indicating a touch on the white key surface
 
 void KeyboardDisplay::drawWhiteTouch(float x, float y, int shape, float touchLocH, float touchLocV, float touchSize) {
+    using namespace ::juce::gl;
+    
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glColor3f(1.0, 0.0, 1.0);
 	
@@ -596,6 +604,8 @@ void KeyboardDisplay::drawWhiteTouch(float x, float y, int shape, float touchLoc
 // Draw a circle indicating a touch on the black key surface
 
 void KeyboardDisplay::drawBlackTouch(float x, float y, float touchLocH, float touchLocV, float touchSize) {
+    using namespace ::juce::gl;
+    
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glColor3f(0.0, 1.0, 0.0);
 	
@@ -616,6 +626,8 @@ void KeyboardDisplay::drawBlackTouch(float x, float y, float touchLocH, float to
 // Draw a slider bar indicating the current key analog position
 
 void KeyboardDisplay::drawAnalogSlider(float x, float y, bool calibrated, bool whiteKey, float value) {
+    using namespace ::juce::gl;
+    
     // First some gray lines indicating the 0.0 and 1.0 marks
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glColor3f(0.5, 0.5, 0.5);

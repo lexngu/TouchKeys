@@ -70,6 +70,8 @@ void KeyPositionGraphDisplay::setDisplaySize(float width, float height) {
 // Render the keyboard display
 
 void KeyPositionGraphDisplay::render() {
+    using namespace ::juce::gl;
+    
 	// Start with a light gray background
 	glClearColor(0.8, 0.8, 0.8, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -201,6 +203,8 @@ float KeyPositionGraphDisplay::graphToDisplayY(float y) {
 }
 
 void KeyPositionGraphDisplay::refreshViewport() {
+    using namespace ::juce::gl;
+    
 	glViewport(0, 0, displayPixelWidth_, displayPixelHeight_);
 }
 
