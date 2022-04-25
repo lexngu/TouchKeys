@@ -35,7 +35,7 @@ PreferencesComponent::PreferencesComponent ()
     addAndMakeVisible (startupPresetComboBox = new ComboBox ("Startup preset combo box"));
     startupPresetComboBox->setEditableText (false);
     startupPresetComboBox->setJustificationType (Justification::centredLeft);
-    startupPresetComboBox->setTextWhenNothingSelected (String::empty);
+    startupPresetComboBox->setTextWhenNothingSelected (String());
     startupPresetComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     startupPresetComboBox->addListener (this);
 
@@ -139,7 +139,7 @@ void PreferencesComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
         else if(selection == kStartupPresetChoose) {
             // Bring up window to choose a preset
             FileChooser myChooser ("Select a preset...",
-                                   File::nonexistent, // File::getSpecialLocation (File::userHomeDirectory),
+                                   File(), // File::getSpecialLocation (File::userHomeDirectory),
                                    "*.tkpreset");
             if(myChooser.browseForFileToOpen()) {
                 controller_->setPrefsStartupPreset(myChooser.getResult().getFullPathName());

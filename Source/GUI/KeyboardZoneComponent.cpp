@@ -38,7 +38,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     addAndMakeVisible (midiOutputDeviceComboBox = new ComboBox ("MIDI input combo box"));
     midiOutputDeviceComboBox->setEditableText (false);
     midiOutputDeviceComboBox->setJustificationType (Justification::centredLeft);
-    midiOutputDeviceComboBox->setTextWhenNothingSelected (String::empty);
+    midiOutputDeviceComboBox->setTextWhenNothingSelected (String());
     midiOutputDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiOutputDeviceComboBox->addListener (this);
 
@@ -61,7 +61,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     addAndMakeVisible (midiOutputModeComboBox = new ComboBox ("MIDI input combo box"));
     midiOutputModeComboBox->setEditableText (false);
     midiOutputModeComboBox->setJustificationType (Justification::centredLeft);
-    midiOutputModeComboBox->setTextWhenNothingSelected (String::empty);
+    midiOutputModeComboBox->setTextWhenNothingSelected (String());
     midiOutputModeComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiOutputModeComboBox->addListener (this);
 
@@ -84,7 +84,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     midiOutputChannelLowEditor->setScrollbarsShown (true);
     midiOutputChannelLowEditor->setCaretVisible (true);
     midiOutputChannelLowEditor->setPopupMenuEnabled (true);
-    midiOutputChannelLowEditor->setText (String::empty);
+    midiOutputChannelLowEditor->setText (String());
 
     addAndMakeVisible (midiOutputChannelHighEditor = new TextEditor ("new text editor"));
     midiOutputChannelHighEditor->setMultiLine (false);
@@ -93,7 +93,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     midiOutputChannelHighEditor->setScrollbarsShown (true);
     midiOutputChannelHighEditor->setCaretVisible (true);
     midiOutputChannelHighEditor->setPopupMenuEnabled (true);
-    midiOutputChannelHighEditor->setText (String::empty);
+    midiOutputChannelHighEditor->setText (String());
 
     addAndMakeVisible (label3 = new Label ("new label",
                                            "to"));
@@ -117,14 +117,14 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     addAndMakeVisible (rangeLowComboBox = new ComboBox ("range low combo box"));
     rangeLowComboBox->setEditableText (true);
     rangeLowComboBox->setJustificationType (Justification::centredLeft);
-    rangeLowComboBox->setTextWhenNothingSelected (String::empty);
+    rangeLowComboBox->setTextWhenNothingSelected (String());
     rangeLowComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     rangeLowComboBox->addListener (this);
 
     addAndMakeVisible (rangeHighComboBox = new ComboBox ("range high combo combo box"));
     rangeHighComboBox->setEditableText (true);
     rangeHighComboBox->setJustificationType (Justification::centredLeft);
-    rangeHighComboBox->setTextWhenNothingSelected (String::empty);
+    rangeHighComboBox->setTextWhenNothingSelected (String());
     rangeHighComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     rangeHighComboBox->addListener (this);
 
@@ -143,7 +143,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     midiOutputTransposeEditor->setScrollbarsShown (true);
     midiOutputTransposeEditor->setCaretVisible (true);
     midiOutputTransposeEditor->setPopupMenuEnabled (true);
-    midiOutputTransposeEditor->setText (String::empty);
+    midiOutputTransposeEditor->setText (String());
 
     addAndMakeVisible (label8 = new Label ("new label",
                                            "Mappings:"));
@@ -172,7 +172,7 @@ KeyboardZoneComponent::KeyboardZoneComponent ()
     pitchWheelRangeEditor->setScrollbarsShown (true);
     pitchWheelRangeEditor->setCaretVisible (true);
     pitchWheelRangeEditor->setPopupMenuEnabled (true);
-    pitchWheelRangeEditor->setText (String::empty);
+    pitchWheelRangeEditor->setText (String());
 
     addAndMakeVisible (keyboardControllersButton = new TextButton ("keyboard controllers button"));
     keyboardControllersButton->setButtonText (" Controllers...");

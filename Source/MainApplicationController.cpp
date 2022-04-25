@@ -465,11 +465,11 @@ void MainApplicationController::playLogWithDialog() {
         return;
     
     FileChooser tkChooser ("Select TouchKeys log...",
-                           File::nonexistent, // File::getSpecialLocation (File::userHomeDirectory),
+                           File(), // File::getSpecialLocation (File::userHomeDirectory),
                            "*.bin");
     if(tkChooser.browseForFileToOpen()) {
         FileChooser midiChooser ("Select MIDI log...",
-                               File::nonexistent, // File::getSpecialLocation (File::userHomeDirectory),
+                               File(), // File::getSpecialLocation (File::userHomeDirectory),
                                "*.bin");
         if(midiChooser.browseForFileToOpen()) {
             logPlayback_ = new LogPlayback(keyboardController_, midiInputController_);
@@ -871,7 +871,7 @@ bool MainApplicationController::loadPresetFromFile(const char *filename) {
 // Present the user with a Save dialog and then save the preset
 bool MainApplicationController::savePresetWithDialog() {
     FileChooser myChooser ("Save preset...",
-                           File::nonexistent, // File::getSpecialLocation (File::userHomeDirectory),
+                           File(), // File::getSpecialLocation (File::userHomeDirectory),
                            "*.tkpreset");
     if(myChooser.browseForFileToSave(true)) {
         File outputFile(myChooser.getResult());
@@ -885,7 +885,7 @@ bool MainApplicationController::savePresetWithDialog() {
 // Present the user with a Load dialog and then save the preset
 bool MainApplicationController::loadPresetWithDialog() {
     FileChooser myChooser ("Select a preset...",
-                           File::nonexistent, // File::getSpecialLocation (File::userHomeDirectory),
+                           File(), // File::getSpecialLocation (File::userHomeDirectory),
                            "*.tkpreset");
     if(myChooser.browseForFileToOpen()) {
         return loadPresetHelper(myChooser.getResult());

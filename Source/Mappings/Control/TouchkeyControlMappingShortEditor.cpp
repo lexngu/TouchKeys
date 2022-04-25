@@ -38,7 +38,7 @@ TouchkeyControlMappingShortEditor::TouchkeyControlMappingShortEditor (TouchkeyCo
     inputRangeLowEditor->setScrollbarsShown (true);
     inputRangeLowEditor->setCaretVisible (true);
     inputRangeLowEditor->setPopupMenuEnabled (true);
-    inputRangeLowEditor->setText (String::empty);
+    inputRangeLowEditor->setText (String());
 
     addAndMakeVisible (rangeLabel = new Label ("range label",
                                                "Input Range:"));
@@ -59,7 +59,7 @@ TouchkeyControlMappingShortEditor::TouchkeyControlMappingShortEditor (TouchkeyCo
     addAndMakeVisible (controlComboBox = new ComboBox ("control combo box"));
     controlComboBox->setEditableText (false);
     controlComboBox->setJustificationType (Justification::centredLeft);
-    controlComboBox->setTextWhenNothingSelected (String::empty);
+    controlComboBox->setTextWhenNothingSelected (String());
     controlComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     controlComboBox->addListener (this);
 
@@ -74,7 +74,7 @@ TouchkeyControlMappingShortEditor::TouchkeyControlMappingShortEditor (TouchkeyCo
     addAndMakeVisible (parameterComboBox = new ComboBox ("parameter combo box"));
     parameterComboBox->setEditableText (false);
     parameterComboBox->setJustificationType (Justification::centredLeft);
-    parameterComboBox->setTextWhenNothingSelected (String::empty);
+    parameterComboBox->setTextWhenNothingSelected (String());
     parameterComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     parameterComboBox->addListener (this);
 
@@ -89,7 +89,7 @@ TouchkeyControlMappingShortEditor::TouchkeyControlMappingShortEditor (TouchkeyCo
     addAndMakeVisible (typeComboBox = new ComboBox ("type combo box"));
     typeComboBox->setEditableText (false);
     typeComboBox->setJustificationType (Justification::centredLeft);
-    typeComboBox->setTextWhenNothingSelected (String::empty);
+    typeComboBox->setTextWhenNothingSelected (String());
     typeComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     typeComboBox->addListener (this);
 
@@ -100,7 +100,7 @@ TouchkeyControlMappingShortEditor::TouchkeyControlMappingShortEditor (TouchkeyCo
     inputRangeHighEditor->setScrollbarsShown (true);
     inputRangeHighEditor->setCaretVisible (true);
     inputRangeHighEditor->setPopupMenuEnabled (true);
-    inputRangeHighEditor->setText (String::empty);
+    inputRangeHighEditor->setText (String());
 
     addAndMakeVisible (rangeLabel2 = new Label ("range label",
                                                 "-"));

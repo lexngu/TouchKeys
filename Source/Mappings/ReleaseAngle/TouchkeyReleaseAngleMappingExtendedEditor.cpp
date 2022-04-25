@@ -50,7 +50,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     addAndMakeVisible (presetComboBox = new ComboBox ("parameter combo box"));
     presetComboBox->setEditableText (false);
     presetComboBox->setJustificationType (Justification::centredLeft);
-    presetComboBox->setTextWhenNothingSelected (String::empty);
+    presetComboBox->setTextWhenNothingSelected (String());
     presetComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     presetComboBox->addListener (this);
 
@@ -69,7 +69,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     windowLengthEditor->setScrollbarsShown (true);
     windowLengthEditor->setCaretVisible (true);
     windowLengthEditor->setPopupMenuEnabled (true);
-    windowLengthEditor->setText (String::empty);
+    windowLengthEditor->setText (String());
 
     addAndMakeVisible (presetLabel3 = new Label ("preset label",
                                                  TRANS("ms. before release")));
@@ -94,7 +94,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upMinSpeedEditor->setScrollbarsShown (true);
     upMinSpeedEditor->setCaretVisible (true);
     upMinSpeedEditor->setPopupMenuEnabled (true);
-    upMinSpeedEditor->setText (String::empty);
+    upMinSpeedEditor->setText (String());
 
     addAndMakeVisible (presetLabel5 = new Label ("preset label",
                                                  TRANS("Min. release speed:")));
@@ -111,7 +111,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upNote1Editor->setScrollbarsShown (true);
     upNote1Editor->setCaretVisible (true);
     upNote1Editor->setPopupMenuEnabled (true);
-    upNote1Editor->setText (String::empty);
+    upNote1Editor->setText (String());
 
     addAndMakeVisible (presetLabel6 = new Label ("preset label",
                                                  TRANS("Send notes:")));
@@ -128,7 +128,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upNote2Editor->setScrollbarsShown (true);
     upNote2Editor->setCaretVisible (true);
     upNote2Editor->setPopupMenuEnabled (true);
-    upNote2Editor->setText (String::empty);
+    upNote2Editor->setText (String());
 
     addAndMakeVisible (upNote3Editor = new TextEditor ("up note 3 editor"));
     upNote3Editor->setMultiLine (false);
@@ -137,7 +137,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upNote3Editor->setScrollbarsShown (true);
     upNote3Editor->setCaretVisible (true);
     upNote3Editor->setPopupMenuEnabled (true);
-    upNote3Editor->setText (String::empty);
+    upNote3Editor->setText (String());
 
     addAndMakeVisible (presetLabel7 = new Label ("preset label",
                                                  TRANS("With velocities:")));
@@ -154,7 +154,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upVelocity1Editor->setScrollbarsShown (true);
     upVelocity1Editor->setCaretVisible (true);
     upVelocity1Editor->setPopupMenuEnabled (true);
-    upVelocity1Editor->setText (String::empty);
+    upVelocity1Editor->setText (String());
 
     addAndMakeVisible (upVelocity2Editor = new TextEditor ("up velocity 2 editor"));
     upVelocity2Editor->setMultiLine (false);
@@ -163,7 +163,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upVelocity2Editor->setScrollbarsShown (true);
     upVelocity2Editor->setCaretVisible (true);
     upVelocity2Editor->setPopupMenuEnabled (true);
-    upVelocity2Editor->setText (String::empty);
+    upVelocity2Editor->setText (String());
 
     addAndMakeVisible (upVelocity3Editor = new TextEditor ("up velocity 3 editor"));
     upVelocity3Editor->setMultiLine (false);
@@ -172,7 +172,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     upVelocity3Editor->setScrollbarsShown (true);
     upVelocity3Editor->setCaretVisible (true);
     upVelocity3Editor->setPopupMenuEnabled (true);
-    upVelocity3Editor->setText (String::empty);
+    upVelocity3Editor->setText (String());
 
     addAndMakeVisible (presetLabel8 = new Label ("preset label",
                                                  TRANS("Release Moving Down")));
@@ -189,7 +189,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downMinSpeedEditor->setScrollbarsShown (true);
     downMinSpeedEditor->setCaretVisible (true);
     downMinSpeedEditor->setPopupMenuEnabled (true);
-    downMinSpeedEditor->setText (String::empty);
+    downMinSpeedEditor->setText (String());
 
     addAndMakeVisible (presetLabel9 = new Label ("preset label",
                                                  TRANS("Min. release speed:")));
@@ -206,7 +206,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downNote1Editor->setScrollbarsShown (true);
     downNote1Editor->setCaretVisible (true);
     downNote1Editor->setPopupMenuEnabled (true);
-    downNote1Editor->setText (String::empty);
+    downNote1Editor->setText (String());
 
     addAndMakeVisible (presetLabel10 = new Label ("preset label",
                                                   TRANS("Send notes:")));
@@ -223,7 +223,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downNote2Editor->setScrollbarsShown (true);
     downNote2Editor->setCaretVisible (true);
     downNote2Editor->setPopupMenuEnabled (true);
-    downNote2Editor->setText (String::empty);
+    downNote2Editor->setText (String());
 
     addAndMakeVisible (downNote3Editor = new TextEditor ("down note 3 editor"));
     downNote3Editor->setMultiLine (false);
@@ -232,7 +232,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downNote3Editor->setScrollbarsShown (true);
     downNote3Editor->setCaretVisible (true);
     downNote3Editor->setPopupMenuEnabled (true);
-    downNote3Editor->setText (String::empty);
+    downNote3Editor->setText (String());
 
     addAndMakeVisible (presetLabel11 = new Label ("preset label",
                                                   TRANS("With velocities:")));
@@ -249,7 +249,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downVelocity1Editor->setScrollbarsShown (true);
     downVelocity1Editor->setCaretVisible (true);
     downVelocity1Editor->setPopupMenuEnabled (true);
-    downVelocity1Editor->setText (String::empty);
+    downVelocity1Editor->setText (String());
 
     addAndMakeVisible (downVelocity2Editor = new TextEditor ("down velocity 2 editor"));
     downVelocity2Editor->setMultiLine (false);
@@ -258,7 +258,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downVelocity2Editor->setScrollbarsShown (true);
     downVelocity2Editor->setCaretVisible (true);
     downVelocity2Editor->setPopupMenuEnabled (true);
-    downVelocity2Editor->setText (String::empty);
+    downVelocity2Editor->setText (String());
 
     addAndMakeVisible (downVelocity3Editor = new TextEditor ("down velocity 3 editor"));
     downVelocity3Editor->setMultiLine (false);
@@ -267,7 +267,7 @@ TouchkeyReleaseAngleMappingExtendedEditor::TouchkeyReleaseAngleMappingExtendedEd
     downVelocity3Editor->setScrollbarsShown (true);
     downVelocity3Editor->setCaretVisible (true);
     downVelocity3Editor->setPopupMenuEnabled (true);
-    downVelocity3Editor->setText (String::empty);
+    downVelocity3Editor->setText (String());
 
     addAndMakeVisible (upEnableButton = new ToggleButton ("up enable button"));
     upEnableButton->setButtonText (TRANS("Enable"));

@@ -38,7 +38,7 @@ TouchkeyPitchBendMappingShortEditor::TouchkeyPitchBendMappingShortEditor (Touchk
     rangeEditor->setScrollbarsShown (true);
     rangeEditor->setCaretVisible (true);
     rangeEditor->setPopupMenuEnabled (true);
-    rangeEditor->setText (String::empty);
+    rangeEditor->setText (String());
 
     addAndMakeVisible (rangeLabel = new Label ("range label",
                                                "Range:"));
@@ -55,7 +55,7 @@ TouchkeyPitchBendMappingShortEditor::TouchkeyPitchBendMappingShortEditor (Touchk
     thresholdEditor->setScrollbarsShown (true);
     thresholdEditor->setCaretVisible (true);
     thresholdEditor->setPopupMenuEnabled (true);
-    thresholdEditor->setText (String::empty);
+    thresholdEditor->setText (String());
 
     addAndMakeVisible (thresholdLabel = new Label ("threshold label",
                                                    "Threshold:"));
@@ -76,7 +76,7 @@ TouchkeyPitchBendMappingShortEditor::TouchkeyPitchBendMappingShortEditor (Touchk
     addAndMakeVisible (endpointsComboBox = new ComboBox ("control combo box"));
     endpointsComboBox->setEditableText (false);
     endpointsComboBox->setJustificationType (Justification::centredLeft);
-    endpointsComboBox->setTextWhenNothingSelected (String::empty);
+    endpointsComboBox->setTextWhenNothingSelected (String());
     endpointsComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     endpointsComboBox->addListener (this);
 

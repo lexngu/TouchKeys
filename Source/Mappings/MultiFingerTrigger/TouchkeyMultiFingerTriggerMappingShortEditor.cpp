@@ -44,7 +44,7 @@ TouchkeyMultiFingerTriggerMappingShortEditor::TouchkeyMultiFingerTriggerMappingS
     addAndMakeVisible (touchesComboBox = new ComboBox ("control combo box"));
     touchesComboBox->setEditableText (false);
     touchesComboBox->setJustificationType (Justification::centredLeft);
-    touchesComboBox->setTextWhenNothingSelected (String::empty);
+    touchesComboBox->setTextWhenNothingSelected (String());
     touchesComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     touchesComboBox->addListener (this);
 
@@ -59,7 +59,7 @@ TouchkeyMultiFingerTriggerMappingShortEditor::TouchkeyMultiFingerTriggerMappingS
     addAndMakeVisible (tapsComboBox = new ComboBox ("control combo box"));
     tapsComboBox->setEditableText (false);
     tapsComboBox->setJustificationType (Justification::centredLeft);
-    tapsComboBox->setTextWhenNothingSelected (String::empty);
+    tapsComboBox->setTextWhenNothingSelected (String());
     tapsComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     tapsComboBox->addListener (this);
 
@@ -74,7 +74,7 @@ TouchkeyMultiFingerTriggerMappingShortEditor::TouchkeyMultiFingerTriggerMappingS
     addAndMakeVisible (noteComboBox = new ComboBox ("control combo box"));
     noteComboBox->setEditableText (false);
     noteComboBox->setJustificationType (Justification::centredLeft);
-    noteComboBox->setTextWhenNothingSelected (String::empty);
+    noteComboBox->setTextWhenNothingSelected (String());
     noteComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     noteComboBox->addListener (this);
 

@@ -329,8 +329,8 @@ bool MainWindow::perform(const InvocationInfo& info) {
             AlertWindow::showOkCancelBox (AlertWindow::QuestionIcon,
                                           "Clear settings",
                                           "Are you sure you want to clear all zones and mappings?",
-                                          String::empty,
-                                          String::empty,
+                                          String(),
+                                          String(),
                                           0,
                                           ModalCallbackFunction::forComponent(alertBoxResultChosen, this));
             break;

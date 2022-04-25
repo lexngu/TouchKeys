@@ -38,7 +38,7 @@ TouchkeyVibratoMappingShortEditor::TouchkeyVibratoMappingShortEditor (TouchkeyVi
     rangeEditor->setScrollbarsShown (true);
     rangeEditor->setCaretVisible (true);
     rangeEditor->setPopupMenuEnabled (true);
-    rangeEditor->setText (String::empty);
+    rangeEditor->setText (String());
 
     addAndMakeVisible (rangeLabel = new Label ("range label",
                                                "Range:"));
@@ -55,7 +55,7 @@ TouchkeyVibratoMappingShortEditor::TouchkeyVibratoMappingShortEditor (TouchkeyVi
     thresholdEditor->setScrollbarsShown (true);
     thresholdEditor->setCaretVisible (true);
     thresholdEditor->setPopupMenuEnabled (true);
-    thresholdEditor->setText (String::empty);
+    thresholdEditor->setText (String());
 
     addAndMakeVisible (thresholdLabel = new Label ("threshold label",
                                                    "Threshold:"));
@@ -76,7 +76,7 @@ TouchkeyVibratoMappingShortEditor::TouchkeyVibratoMappingShortEditor (TouchkeyVi
     addAndMakeVisible (controlComboBox = new ComboBox ("control combo box"));
     controlComboBox->setEditableText (false);
     controlComboBox->setJustificationType (Justification::centredLeft);
-    controlComboBox->setTextWhenNothingSelected (String::empty);
+    controlComboBox->setTextWhenNothingSelected (String());
     controlComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     controlComboBox->addListener (this);
 

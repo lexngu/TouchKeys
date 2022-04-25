@@ -175,8 +175,8 @@ void MappingListItem::buttonClicked (Button* buttonThatWasClicked)
         AlertWindow::showOkCancelBox (AlertWindow::QuestionIcon,
                                       "Delete mapping",
                                       "Are you sure you want to delete this mapping?",
-                                      String::empty,
-                                      String::empty,
+                                      String(),
+                                      String(),
                                       0,
                                       ModalCallbackFunction::forComponent (alertBoxResultChosen, this));
         //[/UserButtonCode_deleteButton]

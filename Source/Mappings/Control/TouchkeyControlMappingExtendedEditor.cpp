@@ -38,7 +38,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     inputRangeLowEditor->setScrollbarsShown (true);
     inputRangeLowEditor->setCaretVisible (true);
     inputRangeLowEditor->setPopupMenuEnabled (true);
-    inputRangeLowEditor->setText (String::empty);
+    inputRangeLowEditor->setText (String());
 
     addAndMakeVisible (rangeLabel = new Label ("range label",
                                                "Input Range:"));
@@ -59,7 +59,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     addAndMakeVisible (controlComboBox = new ComboBox ("control combo box"));
     controlComboBox->setEditableText (false);
     controlComboBox->setJustificationType (Justification::centredLeft);
-    controlComboBox->setTextWhenNothingSelected (String::empty);
+    controlComboBox->setTextWhenNothingSelected (String());
     controlComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     controlComboBox->addListener (this);
 
@@ -74,7 +74,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     addAndMakeVisible (parameterComboBox = new ComboBox ("parameter combo box"));
     parameterComboBox->setEditableText (false);
     parameterComboBox->setJustificationType (Justification::centredLeft);
-    parameterComboBox->setTextWhenNothingSelected (String::empty);
+    parameterComboBox->setTextWhenNothingSelected (String());
     parameterComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     parameterComboBox->addListener (this);
 
@@ -89,7 +89,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     addAndMakeVisible (typeComboBox = new ComboBox ("type combo box"));
     typeComboBox->setEditableText (false);
     typeComboBox->setJustificationType (Justification::centredLeft);
-    typeComboBox->setTextWhenNothingSelected (String::empty);
+    typeComboBox->setTextWhenNothingSelected (String());
     typeComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     typeComboBox->addListener (this);
 
@@ -100,7 +100,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     inputRangeHighEditor->setScrollbarsShown (true);
     inputRangeHighEditor->setCaretVisible (true);
     inputRangeHighEditor->setPopupMenuEnabled (true);
-    inputRangeHighEditor->setText (String::empty);
+    inputRangeHighEditor->setText (String());
 
     addAndMakeVisible (rangeLabel2 = new Label ("range label",
                                                 "-"));
@@ -125,7 +125,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     outputRangeLowEditor->setScrollbarsShown (true);
     outputRangeLowEditor->setCaretVisible (true);
     outputRangeLowEditor->setPopupMenuEnabled (true);
-    outputRangeLowEditor->setText (String::empty);
+    outputRangeLowEditor->setText (String());
 
     addAndMakeVisible (outputRangeHighEditor = new TextEditor ("output range hi text editor"));
     outputRangeHighEditor->setMultiLine (false);
@@ -134,7 +134,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     outputRangeHighEditor->setScrollbarsShown (true);
     outputRangeHighEditor->setCaretVisible (true);
     outputRangeHighEditor->setPopupMenuEnabled (true);
-    outputRangeHighEditor->setText (String::empty);
+    outputRangeHighEditor->setText (String());
 
     addAndMakeVisible (rangeLabel4 = new Label ("range label",
                                                 "-"));
@@ -155,7 +155,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     addAndMakeVisible (directionComboBox = new ComboBox ("direction combo box"));
     directionComboBox->setEditableText (false);
     directionComboBox->setJustificationType (Justification::centredLeft);
-    directionComboBox->setTextWhenNothingSelected (String::empty);
+    directionComboBox->setTextWhenNothingSelected (String());
     directionComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     directionComboBox->addListener (this);
 
@@ -182,7 +182,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     thresholdEditor->setScrollbarsShown (true);
     thresholdEditor->setCaretVisible (true);
     thresholdEditor->setPopupMenuEnabled (true);
-    thresholdEditor->setText (String::empty);
+    thresholdEditor->setText (String());
 
     addAndMakeVisible (cc14BitButton = new ToggleButton ("new toggle button"));
     cc14BitButton->setButtonText ("Use 14-bit CC");
@@ -207,7 +207,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     addAndMakeVisible (outOfRangeComboBox = new ComboBox ("out of range combo box"));
     outOfRangeComboBox->setEditableText (false);
     outOfRangeComboBox->setJustificationType (Justification::centredLeft);
-    outOfRangeComboBox->setTextWhenNothingSelected (String::empty);
+    outOfRangeComboBox->setTextWhenNothingSelected (String());
     outOfRangeComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     outOfRangeComboBox->addListener (this);
 
@@ -226,7 +226,7 @@ TouchkeyControlMappingExtendedEditor::TouchkeyControlMappingExtendedEditor (Touc
     outputDefaultEditor->setScrollbarsShown (true);
     outputDefaultEditor->setCaretVisible (true);
     outputDefaultEditor->setPopupMenuEnabled (true);
-    outputDefaultEditor->setText (String::empty);
+    outputDefaultEditor->setText (String());
 
 
     //[UserPreSize]

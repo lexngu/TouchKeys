@@ -34,7 +34,7 @@ TouchkeyKeyDivisionMappingShortEditor::TouchkeyKeyDivisionMappingShortEditor (To
     addAndMakeVisible (tuningComboBox = new ComboBox ("tuning combo box"));
     tuningComboBox->setEditableText (false);
     tuningComboBox->setJustificationType (Justification::centredLeft);
-    tuningComboBox->setTextWhenNothingSelected (String::empty);
+    tuningComboBox->setTextWhenNothingSelected (String());
     tuningComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     tuningComboBox->addListener (this);
 
@@ -57,7 +57,7 @@ TouchkeyKeyDivisionMappingShortEditor::TouchkeyKeyDivisionMappingShortEditor (To
     addAndMakeVisible (controlComboBox = new ComboBox ("control combo box"));
     controlComboBox->setEditableText (false);
     controlComboBox->setJustificationType (Justification::centredLeft);
-    controlComboBox->setTextWhenNothingSelected (String::empty);
+    controlComboBox->setTextWhenNothingSelected (String());
     controlComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     controlComboBox->addListener (this);
 

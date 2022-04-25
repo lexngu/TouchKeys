@@ -39,7 +39,7 @@ ControlWindowMainComponent::ControlWindowMainComponent ()
     addAndMakeVisible (midiInputDeviceComboBox = new ComboBox ("MIDI input combo box"));
     midiInputDeviceComboBox->setEditableText (false);
     midiInputDeviceComboBox->setJustificationType (Justification::centredLeft);
-    midiInputDeviceComboBox->setTextWhenNothingSelected (String::empty);
+    midiInputDeviceComboBox->setTextWhenNothingSelected (String());
     midiInputDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiInputDeviceComboBox->addListener (this);
 
@@ -65,7 +65,7 @@ ControlWindowMainComponent::ControlWindowMainComponent ()
     addAndMakeVisible (touchkeyDeviceComboBox = new ComboBox ("TouchKeys combo box"));
     touchkeyDeviceComboBox->setEditableText (false);
     touchkeyDeviceComboBox->setJustificationType (Justification::centredLeft);
-    touchkeyDeviceComboBox->setTextWhenNothingSelected (String::empty);
+    touchkeyDeviceComboBox->setTextWhenNothingSelected (String());
     touchkeyDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     touchkeyDeviceComboBox->addListener (this);
 
@@ -145,7 +145,7 @@ ControlWindowMainComponent::ControlWindowMainComponent ()
     addAndMakeVisible (touchkeyOctaveComboBox = new ComboBox ("TouchKeys octave box"));
     touchkeyOctaveComboBox->setEditableText (false);
     touchkeyOctaveComboBox->setJustificationType (Justification::centredLeft);
-    touchkeyOctaveComboBox->setTextWhenNothingSelected (String::empty);
+    touchkeyOctaveComboBox->setTextWhenNothingSelected (String());
     touchkeyOctaveComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     touchkeyOctaveComboBox->addListener (this);
 
@@ -192,7 +192,7 @@ ControlWindowMainComponent::ControlWindowMainComponent ()
     addAndMakeVisible (midiInputAuxDeviceComboBox = new ComboBox ("MIDI input aux combo box"));
     midiInputAuxDeviceComboBox->setEditableText (false);
     midiInputAuxDeviceComboBox->setJustificationType (Justification::centredLeft);
-    midiInputAuxDeviceComboBox->setTextWhenNothingSelected (String::empty);
+    midiInputAuxDeviceComboBox->setTextWhenNothingSelected (String());
     midiInputAuxDeviceComboBox->setTextWhenNoChoicesAvailable ("(no choices)");
     midiInputAuxDeviceComboBox->addListener (this);
 
