@@ -98,34 +98,34 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<GroupComponent> midiInputGroupComponent;
-    std::unique_ptr<ComboBox> midiInputDeviceComboBox;
-    std::unique_ptr<Label> label;
-    std::unique_ptr<GroupComponent> groupComponent;
-    std::unique_ptr<Label> label2;
-    std::unique_ptr<ComboBox> touchkeyDeviceComboBox;
-    std::unique_ptr<Label> label3;
-    std::unique_ptr<TextButton> touchkeyStartButton;
-    std::unique_ptr<Label> touchkeyStatusLabel;
-    std::unique_ptr<GroupComponent> oscGroupComponent;
-    std::unique_ptr<Label> label7;
-    std::unique_ptr<TextEditor> oscHostTextEditor;
-    std::unique_ptr<Label> label8;
-    std::unique_ptr<TextEditor> oscPortTextEditor;
-    std::unique_ptr<ToggleButton> oscEnableButton;
-    std::unique_ptr<ToggleButton> oscEnableRawButton;
-    std::unique_ptr<Label> label4;
-    std::unique_ptr<ComboBox> touchkeyOctaveComboBox;
-    std::unique_ptr<GroupComponent> oscInputGroupComponent;
-    std::unique_ptr<ToggleButton> oscInputEnableButton;
-    std::unique_ptr<Label> label6;
-    std::unique_ptr<TextEditor> oscInputPortTextEditor;
-    std::unique_ptr<TabbedComponent> keyboardZoneTabbedComponent;
-    std::unique_ptr<TextButton> addZoneButton;
-    std::unique_ptr<TextButton> removeZoneButton;
-    std::unique_ptr<TextButton> touchkeyAutodetectButton;
-    std::unique_ptr<ComboBox> midiInputAuxDeviceComboBox;
-    std::unique_ptr<Label> label5;
+    ScopedPointer<GroupComponent> midiInputGroupComponent;
+    ScopedPointer<ComboBox> midiInputDeviceComboBox;
+    ScopedPointer<Label> label;
+    ScopedPointer<GroupComponent> groupComponent;
+    ScopedPointer<Label> label2;
+    ScopedPointer<ComboBox> touchkeyDeviceComboBox;
+    ScopedPointer<Label> label3;
+    ScopedPointer<TextButton> touchkeyStartButton;
+    ScopedPointer<Label> touchkeyStatusLabel;
+    ScopedPointer<GroupComponent> oscGroupComponent;
+    ScopedPointer<Label> label7;
+    ScopedPointer<TextEditor> oscHostTextEditor;
+    ScopedPointer<Label> label8;
+    ScopedPointer<TextEditor> oscPortTextEditor;
+    ScopedPointer<ToggleButton> oscEnableButton;
+    ScopedPointer<ToggleButton> oscEnableRawButton;
+    ScopedPointer<Label> label4;
+    ScopedPointer<ComboBox> touchkeyOctaveComboBox;
+    ScopedPointer<GroupComponent> oscInputGroupComponent;
+    ScopedPointer<ToggleButton> oscInputEnableButton;
+    ScopedPointer<Label> label6;
+    ScopedPointer<TextEditor> oscInputPortTextEditor;
+    ScopedPointer<TabbedComponent> keyboardZoneTabbedComponent;
+    ScopedPointer<TextButton> addZoneButton;
+    ScopedPointer<TextButton> removeZoneButton;
+    ScopedPointer<TextButton> touchkeyAutodetectButton;
+    ScopedPointer<ComboBox> midiInputAuxDeviceComboBox;
+    ScopedPointer<Label> label5;
 
 
     //==============================================================================

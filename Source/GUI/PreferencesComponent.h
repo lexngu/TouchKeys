@@ -80,11 +80,11 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<ComboBox> startupPresetComboBox;
-    std::unique_ptr<Label> label4;
-    std::unique_ptr<ToggleButton> startTouchKeysButton;
-    std::unique_ptr<ToggleButton> autodetectButton;
-    std::unique_ptr<TextButton> defaultsButton;
+    ScopedPointer<ComboBox> startupPresetComboBox;
+    ScopedPointer<Label> label4;
+    ScopedPointer<ToggleButton> startTouchKeysButton;
+    ScopedPointer<ToggleButton> autodetectButton;
+    ScopedPointer<TextButton> defaultsButton;
 
 
     //==============================================================================

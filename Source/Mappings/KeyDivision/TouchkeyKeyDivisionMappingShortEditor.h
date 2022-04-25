@@ -65,11 +65,11 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<ComboBox> tuningComboBox;
-    std::unique_ptr<Label> tuningLabel;
-    std::unique_ptr<Label> controlLabel;
-    std::unique_ptr<ComboBox> controlComboBox;
-    std::unique_ptr<ToggleButton> retriggerButton;
+    ScopedPointer<ComboBox> tuningComboBox;
+    ScopedPointer<Label> tuningLabel;
+    ScopedPointer<Label> controlLabel;
+    ScopedPointer<ComboBox> controlComboBox;
+    ScopedPointer<ToggleButton> retriggerButton;
 
 
     //==============================================================================

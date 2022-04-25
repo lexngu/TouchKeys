@@ -69,13 +69,13 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<Label> controlLabel;
-    std::unique_ptr<ComboBox> touchesComboBox;
-    std::unique_ptr<Label> controlLabel2;
-    std::unique_ptr<ComboBox> tapsComboBox;
-    std::unique_ptr<Label> controlLabel3;
-    std::unique_ptr<ComboBox> noteComboBox;
-    std::unique_ptr<ToggleButton> sendOnReleaseButton;
+    ScopedPointer<Label> controlLabel;
+    ScopedPointer<ComboBox> touchesComboBox;
+    ScopedPointer<Label> controlLabel2;
+    ScopedPointer<ComboBox> tapsComboBox;
+    ScopedPointer<Label> controlLabel3;
+    ScopedPointer<ComboBox> noteComboBox;
+    ScopedPointer<ToggleButton> sendOnReleaseButton;
 
 
     //==============================================================================
