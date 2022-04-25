@@ -70,12 +70,12 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<ToggleButton> bypassToggleButton;
-    ScopedPointer<TextButton> showDetailsButton;
-    ScopedPointer<Label> mappingTypeLabel;
-    ScopedPointer<MappingEditorComponent> mappingShortEditorComponent;
-    ScopedPointer<Label> noSettingsLabel;
-    ScopedPointer<TextButton> deleteButton;
+    std::unique_ptr<ToggleButton> bypassToggleButton;
+    std::unique_ptr<TextButton> showDetailsButton;
+    std::unique_ptr<Label> mappingTypeLabel;
+    std::unique_ptr<MappingEditorComponent> mappingShortEditorComponent;
+    std::unique_ptr<Label> noSettingsLabel;
+    std::unique_ptr<TextButton> deleteButton;
     Path internalPath1;
     Path internalPath2;
 

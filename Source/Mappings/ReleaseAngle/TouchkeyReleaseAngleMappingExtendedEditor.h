@@ -75,36 +75,36 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<Label> titleLabel;
-    ScopedPointer<Label> presetLabel;
-    ScopedPointer<ComboBox> presetComboBox;
-    ScopedPointer<Label> presetLabel2;
-    ScopedPointer<TextEditor> windowLengthEditor;
-    ScopedPointer<Label> presetLabel3;
-    ScopedPointer<Label> presetLabel4;
-    ScopedPointer<TextEditor> upMinSpeedEditor;
-    ScopedPointer<Label> presetLabel5;
-    ScopedPointer<TextEditor> upNote1Editor;
-    ScopedPointer<Label> presetLabel6;
-    ScopedPointer<TextEditor> upNote2Editor;
-    ScopedPointer<TextEditor> upNote3Editor;
-    ScopedPointer<Label> presetLabel7;
-    ScopedPointer<TextEditor> upVelocity1Editor;
-    ScopedPointer<TextEditor> upVelocity2Editor;
-    ScopedPointer<TextEditor> upVelocity3Editor;
-    ScopedPointer<Label> presetLabel8;
-    ScopedPointer<TextEditor> downMinSpeedEditor;
-    ScopedPointer<Label> presetLabel9;
-    ScopedPointer<TextEditor> downNote1Editor;
-    ScopedPointer<Label> presetLabel10;
-    ScopedPointer<TextEditor> downNote2Editor;
-    ScopedPointer<TextEditor> downNote3Editor;
-    ScopedPointer<Label> presetLabel11;
-    ScopedPointer<TextEditor> downVelocity1Editor;
-    ScopedPointer<TextEditor> downVelocity2Editor;
-    ScopedPointer<TextEditor> downVelocity3Editor;
-    ScopedPointer<ToggleButton> upEnableButton;
-    ScopedPointer<ToggleButton> downEnableButton;
+    std::unique_ptr<Label> titleLabel;
+    std::unique_ptr<Label> presetLabel;
+    std::unique_ptr<ComboBox> presetComboBox;
+    std::unique_ptr<Label> presetLabel2;
+    std::unique_ptr<TextEditor> windowLengthEditor;
+    std::unique_ptr<Label> presetLabel3;
+    std::unique_ptr<Label> presetLabel4;
+    std::unique_ptr<TextEditor> upMinSpeedEditor;
+    std::unique_ptr<Label> presetLabel5;
+    std::unique_ptr<TextEditor> upNote1Editor;
+    std::unique_ptr<Label> presetLabel6;
+    std::unique_ptr<TextEditor> upNote2Editor;
+    std::unique_ptr<TextEditor> upNote3Editor;
+    std::unique_ptr<Label> presetLabel7;
+    std::unique_ptr<TextEditor> upVelocity1Editor;
+    std::unique_ptr<TextEditor> upVelocity2Editor;
+    std::unique_ptr<TextEditor> upVelocity3Editor;
+    std::unique_ptr<Label> presetLabel8;
+    std::unique_ptr<TextEditor> downMinSpeedEditor;
+    std::unique_ptr<Label> presetLabel9;
+    std::unique_ptr<TextEditor> downNote1Editor;
+    std::unique_ptr<Label> presetLabel10;
+    std::unique_ptr<TextEditor> downNote2Editor;
+    std::unique_ptr<TextEditor> downNote3Editor;
+    std::unique_ptr<Label> presetLabel11;
+    std::unique_ptr<TextEditor> downVelocity1Editor;
+    std::unique_ptr<TextEditor> downVelocity2Editor;
+    std::unique_ptr<TextEditor> downVelocity3Editor;
+    std::unique_ptr<ToggleButton> upEnableButton;
+    std::unique_ptr<ToggleButton> downEnableButton;
 
 
     //==============================================================================

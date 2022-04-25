@@ -74,32 +74,32 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<TextEditor> inputRangeLowEditor;
-    ScopedPointer<Label> rangeLabel;
-    ScopedPointer<Label> controlLabel;
-    ScopedPointer<ComboBox> controlComboBox;
-    ScopedPointer<Label> controlLabel2;
-    ScopedPointer<ComboBox> parameterComboBox;
-    ScopedPointer<Label> controlLabel3;
-    ScopedPointer<ComboBox> typeComboBox;
-    ScopedPointer<TextEditor> inputRangeHighEditor;
-    ScopedPointer<Label> rangeLabel2;
-    ScopedPointer<Label> rangeLabel3;
-    ScopedPointer<TextEditor> outputRangeLowEditor;
-    ScopedPointer<TextEditor> outputRangeHighEditor;
-    ScopedPointer<Label> rangeLabel4;
-    ScopedPointer<Label> controlLabel4;
-    ScopedPointer<ComboBox> directionComboBox;
-    ScopedPointer<Label> titleLabel;
-    ScopedPointer<Label> rangeLabel5;
-    ScopedPointer<TextEditor> thresholdEditor;
-    ScopedPointer<ToggleButton> cc14BitButton;
-    ScopedPointer<ToggleButton> ignore2FingersButton;
-    ScopedPointer<ToggleButton> ignore3FingersButton;
-    ScopedPointer<Label> controlLabel6;
-    ScopedPointer<ComboBox> outOfRangeComboBox;
-    ScopedPointer<Label> rangeLabel6;
-    ScopedPointer<TextEditor> outputDefaultEditor;
+    std::unique_ptr<TextEditor> inputRangeLowEditor;
+    std::unique_ptr<Label> rangeLabel;
+    std::unique_ptr<Label> controlLabel;
+    std::unique_ptr<ComboBox> controlComboBox;
+    std::unique_ptr<Label> controlLabel2;
+    std::unique_ptr<ComboBox> parameterComboBox;
+    std::unique_ptr<Label> controlLabel3;
+    std::unique_ptr<ComboBox> typeComboBox;
+    std::unique_ptr<TextEditor> inputRangeHighEditor;
+    std::unique_ptr<Label> rangeLabel2;
+    std::unique_ptr<Label> rangeLabel3;
+    std::unique_ptr<TextEditor> outputRangeLowEditor;
+    std::unique_ptr<TextEditor> outputRangeHighEditor;
+    std::unique_ptr<Label> rangeLabel4;
+    std::unique_ptr<Label> controlLabel4;
+    std::unique_ptr<ComboBox> directionComboBox;
+    std::unique_ptr<Label> titleLabel;
+    std::unique_ptr<Label> rangeLabel5;
+    std::unique_ptr<TextEditor> thresholdEditor;
+    std::unique_ptr<ToggleButton> cc14BitButton;
+    std::unique_ptr<ToggleButton> ignore2FingersButton;
+    std::unique_ptr<ToggleButton> ignore3FingersButton;
+    std::unique_ptr<Label> controlLabel6;
+    std::unique_ptr<ComboBox> outOfRangeComboBox;
+    std::unique_ptr<Label> rangeLabel6;
+    std::unique_ptr<TextEditor> outputDefaultEditor;
 
 
     //==============================================================================

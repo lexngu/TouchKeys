@@ -143,28 +143,28 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<MappingListComponent> mappingListComponent;
-    ScopedPointer<GroupComponent> midiOutputGroupComponent;
-    ScopedPointer<ComboBox> midiOutputDeviceComboBox;
-    ScopedPointer<Label> label4;
-    ScopedPointer<Label> label5;
-    ScopedPointer<ComboBox> midiOutputModeComboBox;
-    ScopedPointer<ToggleButton> midiOutputVoiceStealingButton;
-    ScopedPointer<Label> label2;
-    ScopedPointer<TextEditor> midiOutputChannelLowEditor;
-    ScopedPointer<TextEditor> midiOutputChannelHighEditor;
-    ScopedPointer<Label> label3;
-    ScopedPointer<GroupComponent> midiOutputGroupComponent2;
-    ScopedPointer<Label> label7;
-    ScopedPointer<ComboBox> rangeLowComboBox;
-    ScopedPointer<ComboBox> rangeHighComboBox;
-    ScopedPointer<Label> label6;
-    ScopedPointer<TextEditor> midiOutputTransposeEditor;
-    ScopedPointer<Label> label8;
-    ScopedPointer<TextButton> addMappingButton;
-    ScopedPointer<Label> label9;
-    ScopedPointer<TextEditor> pitchWheelRangeEditor;
-    ScopedPointer<TextButton> keyboardControllersButton;
+    std::unique_ptr<MappingListComponent> mappingListComponent;
+    std::unique_ptr<GroupComponent> midiOutputGroupComponent;
+    std::unique_ptr<ComboBox> midiOutputDeviceComboBox;
+    std::unique_ptr<Label> label4;
+    std::unique_ptr<Label> label5;
+    std::unique_ptr<ComboBox> midiOutputModeComboBox;
+    std::unique_ptr<ToggleButton> midiOutputVoiceStealingButton;
+    std::unique_ptr<Label> label2;
+    std::unique_ptr<TextEditor> midiOutputChannelLowEditor;
+    std::unique_ptr<TextEditor> midiOutputChannelHighEditor;
+    std::unique_ptr<Label> label3;
+    std::unique_ptr<GroupComponent> midiOutputGroupComponent2;
+    std::unique_ptr<Label> label7;
+    std::unique_ptr<ComboBox> rangeLowComboBox;
+    std::unique_ptr<ComboBox> rangeHighComboBox;
+    std::unique_ptr<Label> label6;
+    std::unique_ptr<TextEditor> midiOutputTransposeEditor;
+    std::unique_ptr<Label> label8;
+    std::unique_ptr<TextButton> addMappingButton;
+    std::unique_ptr<Label> label9;
+    std::unique_ptr<TextEditor> pitchWheelRangeEditor;
+    std::unique_ptr<TextButton> keyboardControllersButton;
 
 
     //==============================================================================

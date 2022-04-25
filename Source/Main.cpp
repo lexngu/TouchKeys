@@ -81,9 +81,9 @@ public:
     }
 
 private:
-    ScopedPointer<MainWindow> mainWindow_;
-    ScopedPointer<GraphicsDisplayWindow> keyboardDisplayWindow_;
-    ScopedPointer<PreferencesWindow> preferencesWindow_;
+    std::unique_ptr<MainWindow> mainWindow_;
+    std::unique_ptr<GraphicsDisplayWindow> keyboardDisplayWindow_;
+    std::unique_ptr<PreferencesWindow> preferencesWindow_;
     MainApplicationController controller_;
 };
 

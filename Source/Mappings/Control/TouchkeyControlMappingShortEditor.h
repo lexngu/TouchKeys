@@ -69,16 +69,16 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<TextEditor> inputRangeLowEditor;
-    ScopedPointer<Label> rangeLabel;
-    ScopedPointer<Label> controlLabel;
-    ScopedPointer<ComboBox> controlComboBox;
-    ScopedPointer<Label> controlLabel2;
-    ScopedPointer<ComboBox> parameterComboBox;
-    ScopedPointer<Label> controlLabel3;
-    ScopedPointer<ComboBox> typeComboBox;
-    ScopedPointer<TextEditor> inputRangeHighEditor;
-    ScopedPointer<Label> rangeLabel2;
+    std::unique_ptr<TextEditor> inputRangeLowEditor;
+    std::unique_ptr<Label> rangeLabel;
+    std::unique_ptr<Label> controlLabel;
+    std::unique_ptr<ComboBox> controlComboBox;
+    std::unique_ptr<Label> controlLabel2;
+    std::unique_ptr<ComboBox> parameterComboBox;
+    std::unique_ptr<Label> controlLabel3;
+    std::unique_ptr<ComboBox> typeComboBox;
+    std::unique_ptr<TextEditor> inputRangeHighEditor;
+    std::unique_ptr<Label> rangeLabel2;
 
 
     //==============================================================================
