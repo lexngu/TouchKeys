@@ -11,6 +11,8 @@
     <string>uk.ac.qmul.eecs.touchkeys</string>
     <key>CFBundleName</key>
     <string>TouchKeys</string>
+    <key>CFBundleDisplayName</key>
+    <string>TouchKeys</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleSignature</key>
@@ -20,7 +22,7 @@
     <key>CFBundleVersion</key>
     <string>0.1.0</string>
     <key>NSHumanReadableCopyright</key>
-    <string>Queen Mary, University of London</string>
+    <string></string>
     <key>NSHighResolutionCapable</key>
     <true/>
   </dict>
