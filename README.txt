@@ -4,6 +4,9 @@ TouchKeys: multi-touch keyboard control software
 Centre for Digital Music (C4DM)
 Queen Mary, University of London
 
+(c) 2022 Alexander Nguyen
+Institute for Music Informatics and Musciology (IMWI)
+University of Music, Karlsruhe (Germany)
 ================================================================
 
 This program operates the TouchKeys hardware, providing
@@ -12,7 +15,4 @@ see the following link for further information:
 
 https://code.soundsoftware.ac.uk/projects/touchkeys
 
-Build instructions on Mac and Linux can be found here (Windows
-support to come in a future release):
-
-https://code.soundsoftware.ac.uk/documents/100
+This fork is able to run on macOS 12, using JUCE 6.
