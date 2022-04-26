@@ -928,7 +928,7 @@ XmlElement* MidiKeyboardSegment::getPreset() {
     properties.setValue("retransmitMaxPolyphony", retransmitMaxPolyphony_);
     properties.setValue("useVoiceStealing", useVoiceStealing_);
 
-    segmentElement->addChildElement(properties.createXml("Properties"));
+    segmentElement->addChildElement(properties.createXml("Properties").get());
     
     // Go through mapping factories and add their settings
     vector<MappingFactory*>::iterator it;
