@@ -70,6 +70,8 @@ MainWindow::MainWindow(MainApplicationController& controller)
     // Allow resizing to be larger vertically
     setResizable(true, true);
     setResizeLimits(getWidth(), getHeight(), getWidth(), 2048);
+  
+    setLookAndFeel(new LookAndFeel_V2());
     
     setVisible (true);
 }
