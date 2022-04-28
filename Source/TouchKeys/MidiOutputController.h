@@ -35,7 +35,7 @@ class MidiOutputController {
 private:
     struct MidiOutputControllerRecord {
         int portNumber;
-        MidiOutput *output;
+        std::shared_ptr<MidiOutput> output;
     };
     
 public:

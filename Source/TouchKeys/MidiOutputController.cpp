@@ -64,7 +64,7 @@ bool MidiOutputController::enablePort(int identifier, int deviceNumber) {
     if(activePorts_.count(identifier) > 0)
         disablePort(identifier);
 	
-    MidiOutput *device = MidiOutput::openDevice(deviceNumber).get();
+    std::unique_ptr<MidiOutput> device = MidiOutput::openDevice(deviceNumber);
     
     if(device == 0) {
         cout << "Failed to enable MIDI output port " << deviceNumber << ")\n";
@@ -78,7 +78,7 @@ bool MidiOutputController::enablePort(int identifier, int deviceNumber) {
     // Save the device in the set of ports
     MidiOutputControllerRecord record;
     record.portNumber = deviceNumber;
-    record.output = device;
+    record.output = std::move(device);
     
     activePorts_[identifier] = record;
     
@@ -92,7 +92,7 @@ bool MidiOutputController::enableVirtualPort(int identifier, const char *name) {
         disablePort(identifier);
     
     // Try to create a new port
-    MidiOutput* device = MidiOutput::createNewDevice(name).get();
+    std::unique_ptr<MidiOutput> device = MidiOutput::createNewDevice(name);
     if(device == 0) {
         cout << "Failed to enable MIDI virtual output port " << name << ")\n";
         return false;
@@ -100,7 +100,7 @@ bool MidiOutputController::enableVirtualPort(int identifier, const char *name) {
     
     MidiOutputControllerRecord record;
     record.portNumber = kMidiVirtualOutputPortNumber;
-    record.output = device;
+    record.output = std::move(device);
     
     activePorts_[identifier] = record;
     
@@ -116,7 +116,7 @@ void MidiOutputController::disablePort(int identifier) {
 	if(activePorts_.count(identifier) <= 0)
 		return;
 	
-	MidiOutput *device = activePorts_[identifier].output;
+	std::shared_ptr<MidiOutput> device = activePorts_[identifier].output;
     
     if(device == 0)
         return;
@@ -124,7 +124,6 @@ void MidiOutputController::disablePort(int identifier) {
 #ifdef DEBUG_MIDI_OUTPUT_CONTROLLER
 	cout << "Disabling MIDI output " << activePorts_[identifier].portNumber << " for ID " << identifier << "\n";
 #endif
-    delete device;
     
 	activePorts_.erase(identifier);
 }
@@ -141,7 +140,6 @@ void MidiOutputController::disableAllPorts() {
 	while(it != activePorts_.end()) {
         if(it->second.output == 0)
             continue;
-		delete it->second.output;						// free MidiInputCallback
 		it++;
 	}
 	
