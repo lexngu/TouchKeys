@@ -1118,7 +1118,7 @@ bool TouchkeyDevice::calibrationLoadFromFile(std::string const& filename) {
 	// Open the file and read the new values
 	try {
         XmlDocument doc(File(filename.c_str()));
-		XmlElement *baseElement = doc.getDocumentElement().get();
+		auto baseElement = doc.getDocumentElement();
         XmlElement *deviceCalibrationElement, *calibratorElement;
 		
 		if(baseElement == 0) {
@@ -1131,7 +1131,7 @@ bool TouchkeyDevice::calibrationLoadFromFile(std::string const& filename) {
 		deviceCalibrationElement = baseElement->getChildByName("TouchkeyDeviceCalibration");
 		if(deviceCalibrationElement == 0) {
 			std::cerr << "TouchkeyDevice: malformed calibration file, aborting.\n";
-            delete baseElement;
+            baseElement.reset();
 			throw 1;
 		}
 		
@@ -1163,7 +1163,7 @@ bool TouchkeyDevice::calibrationLoadFromFile(std::string const& filename) {
         }
 		//lastCalibrationFile_ = filename;
         
-        delete baseElement;
+        baseElement.reset();
 	}
 	catch(...) {
 		return false;

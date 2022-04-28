@@ -241,9 +241,12 @@ public:
         PropertySet properties;
         storeCommonProperties(properties);
         
-        XmlElement* presetElement = properties.createXml("MappingFactory").get();
+        auto presetElement = properties.createXml("MappingFactory");
         presetElement->setAttribute("type", "Unknown");
-        return presetElement;
+        
+        XmlElement* xmlElement = new XmlElement(*(presetElement.get()));
+        
+        return xmlElement;
     }
     
     virtual bool loadPreset(XmlElement const* preset) {

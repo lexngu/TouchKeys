@@ -157,10 +157,12 @@ XmlElement* TouchkeyKeyDivisionMappingFactory::getPreset() {
     
     // No properties for now
     
-    XmlElement* preset = properties.createXml("MappingFactory").get();
+    auto preset = properties.createXml("MappingFactory");
     preset->setAttribute("type", "KeyDivision");
     
-    return preset;
+    XmlElement *xmlElement = new XmlElement(*(preset.get()));
+    
+    return xmlElement;
 }
 
 bool TouchkeyKeyDivisionMappingFactory::loadPreset(XmlElement const* preset) {

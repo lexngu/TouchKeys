@@ -231,10 +231,12 @@ XmlElement* TouchkeyVibratoMappingFactory::getPreset() {
     properties.setValue("vibratoOnsetRatioX", vibratoOnsetRatioX_);
     properties.setValue("vibratoOnsetRatioY", vibratoOnsetRatioY_);
 
-    XmlElement* preset = properties.createXml("MappingFactory").get();
+    auto preset = properties.createXml("MappingFactory");
     preset->setAttribute("type", "Vibrato");
     
-    return preset;
+    XmlElement* xmlElement = new XmlElement(*(preset.get()));
+    
+    return xmlElement;
 }
 
 bool TouchkeyVibratoMappingFactory::loadPreset(XmlElement const* preset) {

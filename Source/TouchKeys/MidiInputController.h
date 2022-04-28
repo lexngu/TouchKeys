@@ -151,7 +151,7 @@ private:
 	PianoKeyboard& keyboard_;						// Reference to main keyboard data
     MidiOutputController *midiOutputController_;	// Destination for MIDI output
     
-	map<int, MidiInput*> activePorts_;              // Sources of MIDI data
+	map<int, std::shared_ptr<MidiInput>> activePorts_;              // Sources of MIDI data
     int primaryActivePort_;                         // Which source is primary
     
     vector<MidiKeyboardSegment*> segments_;         // Segments of the keyboard

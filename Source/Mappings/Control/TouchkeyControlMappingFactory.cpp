@@ -398,10 +398,12 @@ XmlElement* TouchkeyControlMappingFactory::getPreset() {
     properties.setValue("direction", direction_);
     properties.setValue("use14Bit", use14BitControl_);
     
-    XmlElement* preset = properties.createXml("MappingFactory").get();
+    auto preset = properties.createXml("MappingFactory");
     preset->setAttribute("type", "Control");
     
-    return preset;
+    XmlElement *xmlElement = new XmlElement(*(preset.get()));
+    
+    return xmlElement;
 }
 
 bool TouchkeyControlMappingFactory::loadPreset(XmlElement const* preset) {

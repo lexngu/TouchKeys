@@ -141,7 +141,7 @@ bool MidiInputController::enablePort(int portNumber, bool isPrimary) {
     
     // Enable the port if it hasn't been already
     if(activePorts_.count(portNumber) == 0) {
-        MidiInput *device = MidiInput::openDevice(portNumber, this).get();
+        auto device = MidiInput::openDevice(portNumber, this);
             
         if(device == 0) {
 #ifdef DEBUG_MIDI_INPUT_CONTROLLER
@@ -157,7 +157,7 @@ bool MidiInputController::enablePort(int portNumber, bool isPrimary) {
         device->start();
 
         // Save the device in the set of ports
-        activePorts_[portNumber] = device;
+        activePorts_[portNumber] = std::move(device);
     }
     else {
 #ifdef DEBUG_MIDI_INPUT_CONTROLLER
@@ -199,7 +199,7 @@ void MidiInputController::disablePort(int portNumber) {
 	if(activePorts_.count(portNumber) <= 0)
 		return;
 	
-	MidiInput *device = activePorts_[portNumber];
+	auto device = activePorts_[portNumber];
 
     if(device == 0)
         return;
@@ -209,7 +209,6 @@ void MidiInputController::disablePort(int portNumber) {
 #endif
     
     device->stop();
-    delete device;
     
 	activePorts_.erase(portNumber);
     if(primaryActivePort_ == portNumber)
@@ -227,8 +226,8 @@ void MidiInputController::disablePrimaryPort() {
 // Remove all MIDI input sources and free associated memory
 
 void MidiInputController::disableAllPorts(bool auxiliaryOnly) {
-	map<int, MidiInput*>::iterator it;
-	MidiInput* primaryPort = 0;
+	map<int, std::shared_ptr<MidiInput>>::iterator it;
+    std::shared_ptr<MidiInput> primaryPort = 0;
 	
 #ifdef DEBUG_MIDI_INPUT_CONTROLLER
     cout << "Disabling all MIDI input ports\n";
@@ -247,7 +246,7 @@ void MidiInputController::disableAllPorts(bool auxiliaryOnly) {
             primaryPort = it->second;
         else {
             it->second->stop();                     // disable port
-            delete it->second;						// free MidiInputCallback
+            it->second.reset();
         }
 		it++;
 	}
@@ -275,7 +274,7 @@ int MidiInputController::primaryActivePort() {
 vector<int> MidiInputController::auxiliaryActivePorts() {
     vector<int> ports;
     
-	map<int, MidiInput*>::iterator it;
+	map<int, std::shared_ptr<MidiInput>>::iterator it;
     
     for(it = activePorts_.begin(); it != activePorts_.end(); ++it) {
         if(it->first == primaryActivePort_)
