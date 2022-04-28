@@ -876,7 +876,7 @@
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/cpp_libs/JUCE/modules /usr/local/include $(HOME)/cpp_libs/boost_1_55_0 $(HOME)/cpp_libs/liblo-0.31";
 				OTHER_LDFLAGS = "/usr/local/lib/liblo.7.dylib";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.qmul.eecs.touchkeys;
@@ -976,7 +976,7 @@
 				INFOPLIST_FILE = Info-App.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/cpp_libs/JUCE/modules /usr/local/include $(HOME)/cpp_libs/boost_1_55_0 $(HOME)/cpp_libs/liblo-0.31";
 				OTHER_LDFLAGS = "/usr/local/lib/liblo.7.dylib";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.qmul.eecs.touchkeys;

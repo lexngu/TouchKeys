@@ -15,4 +15,4 @@ see the following link for further information:
 
 https://code.soundsoftware.ac.uk/projects/touchkeys
 
-This fork is able to run on macOS 12, using JUCE 6.
+This fork is able to run on macOS 11 & 12, using JUCE 6.
