@@ -71,7 +71,7 @@ MainWindow::MainWindow(MainApplicationController& controller)
     setResizable(true, true);
     setResizeLimits(getWidth(), getHeight(), getWidth(), 2048);
   
-    setLookAndFeel(new LookAndFeel_V2());
+    setLookAndFeel(&otherLookAndFeel);
     
     setVisible (true);
 }
@@ -83,6 +83,7 @@ MainWindow::~MainWindow() {
 #else
     setMenuBar(nullptr);
 #endif /* JUCE_MAC */
+    setLookAndFeel(nullptr);
 }
 
 // Handle periodic GUI updates, keeping the GUI in sync with the underlying system

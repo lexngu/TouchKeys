@@ -119,6 +119,8 @@ private:
     MainApplicationController& controller_;
     ApplicationCommandManager commandManager_;    
     ControlWindowMainComponent mainComponent_;
+    
+    LookAndFeel_V2 otherLookAndFeel;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainWindow)
 };
