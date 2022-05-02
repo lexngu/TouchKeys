@@ -281,7 +281,7 @@
   </MODULES>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX" externalLibraries="" extraFrameworks=""
-               extraLinkerFlags="/usr/local/lib/liblo.7.dylib&#10;" smallIcon="mbX6Jp"
+               extraLinkerFlags="/usr/local/lib/liblo.a" smallIcon="mbX6Jp"
                bigIcon="b3DhPc" xcodeValidArchs="arm64,x86_64">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="11.0 SDK" isDebug="1"
