@@ -4,7 +4,7 @@ TouchKeys: multi-touch keyboard control software
 Centre for Digital Music (C4DM)
 Queen Mary, University of London
 
-(c) 2022 Alexander Nguyen
+Edited by Alexander Nguyen
 Institute for Music Informatics and Musciology (IMWI)
 University of Music, Karlsruhe (Germany)
 ================================================================
